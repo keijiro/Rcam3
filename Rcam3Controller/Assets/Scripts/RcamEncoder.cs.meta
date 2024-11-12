@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 49fb576c564e24da8baaf8d239ff730d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _cameraManager: {instanceID: 0}
+  - _occlusionManager: {instanceID: 0}
+  - _camera: {instanceID: 0}
+  - _senderTexture: {fileID: 8400000, guid: 84f6cc81d4a364f0f95c287ac930c9bd, type: 2}
+  - _monitorTexture: {fileID: 8400000, guid: 61952a7a73590440ab4078f333a1caaa, type: 2}
+  - _muxShader: {fileID: 4800000, guid: 523e1189ec82844909560eb8184b9441, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UITK/Controller.uss?fileID=7433441132597879392&amp;guid=00140bd20229342af86863d39b5bbcf2&amp;type=3#Controller" />
+    <engine:VisualElement name="monitor" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url(&quot;project://database/Assets/Materials/Monitor.renderTexture?fileID=8400000&amp;guid=61952a7a73590440ab4078f333a1caaa&amp;type=2#Monitor&quot;); -unity-background-scale-mode: scale-to-fit;" />
+    <engine:VisualElement name="status-view" data-source-type="Rcam3.StatusViewController, Assembly-CSharp" style="position: absolute; right: 40px; bottom: 20px;">
+        <engine:Label text="POS -123.45 -123.45 -123.45" name="position-label">
+            <Bindings>
+                <engine:DataBinding property="text" data-source-path="PositionText" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:Label>
+        <engine:Label text="ROT -123.45 -123.45 -123.45" name="rotation-label">
+            <Bindings>
+                <engine:DataBinding property="text" data-source-path="RotationText" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:Label>
+        <engine:Label text="TIME 23:59:59" name="clock">
+            <Bindings>
+                <engine:DataBinding property="text" data-source-path="TimeText" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:Label>
+    </engine:VisualElement>
+</engine:UXML>

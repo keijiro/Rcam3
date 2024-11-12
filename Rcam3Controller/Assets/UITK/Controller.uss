@@ -1,0 +1,5 @@
+.unity-label {
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/Inconsolata/Inconsolata_SemiCondensed-ExtraLight.ttf?fileID=12800000&guid=51c7153c783dd499a88b3f3032fb4820&type=3#Inconsolata_SemiCondensed-ExtraLight");
+    font-size: 10px;
+}
