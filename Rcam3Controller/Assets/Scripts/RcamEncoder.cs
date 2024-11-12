@@ -44,11 +44,8 @@ public sealed class Controller : MonoBehaviour
         for (var i = 0; i < args.textures.Count; i++)
         {
             var id = args.propertyNameIds[i];
-            var tex = args.textures[i];
-            if (id == ShaderID.TextureY)
-                _muxMaterial.SetTexture(ShaderID.TextureY, tex);
-            else if (id == ShaderID.TextureCbCr)
-                _muxMaterial.SetTexture(ShaderID.TextureCbCr, tex);
+            if (id == ShaderID.TextureY || id == ShaderID.TextureCbCr)
+                _muxMaterial.SetTexture(id, args.textures[i]);
         }
 
         // Projection matrix
@@ -75,13 +72,10 @@ public sealed class Controller : MonoBehaviour
         for (var i = 0; i < args.textures.Count; i++)
         {
             var id = args.propertyNameIds[i];
-            var tex = args.textures[i];
-            if (id == ShaderID.HumanStencil)
-                _muxMaterial.SetTexture(ShaderID.HumanStencil, tex);
-            else if (id == ShaderID.EnvironmentDepth)
-                _muxMaterial.SetTexture(ShaderID.EnvironmentDepth, tex);
-            else if (id == ShaderID.EnvironmentDepthConfidence)
-                _muxMaterial.SetTexture(ShaderID.EnvironmentDepthConfidence, tex);
+            if (id == ShaderID.HumanStencil ||
+                id == ShaderID.EnvironmentDepth ||
+                id == ShaderID.EnvironmentDepthConfidence)
+                _muxMaterial.SetTexture(id, args.textures[i]);
         }
     }
 

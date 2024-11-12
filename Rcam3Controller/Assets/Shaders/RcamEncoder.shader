@@ -105,30 +105,27 @@ float4 FragmentMuxer(float4 vertex : SV_Position,
 float4 FragmentMonitor(float4 vertex : SV_Position,
                        float2 texCoord : TEXCOORD) : SV_Target
 {
-    /*
-    // Texture transform
-    float2 uv = mul(float3(texCoord, 1), _UnityDisplayTransform).xy;
-    uv = (uv - 0.5) / _AspectFix + 0.5;
+    float2 tc = texCoord.xy;
+
+    // Aspect ratio compensation & vertical flip
+    tc.y = (0.5 - tc.y) * _AspectFix + 0.5;
 
     // Texture samples
-    float y = tex2D(_textureY, uv).x;
-    float2 cbcr = tex2D(_textureCbCr, uv).xy;
-    float mask = tex2D(_HumanStencil, uv).x;
-    float depth = tex2D(_EnvironmentDepth, uv).x;
+    float y = tex2D(_textureY, tc).x;
+    float2 cbcr = tex2D(_textureCbCr, tc).xy;
+    float mask = tex2D(_HumanStencil, tc).x;
+    float depth = tex2D(_EnvironmentDepth, tc).x;
+    float conf = tex2D(_EnvironmentDepthConfidence, tc).x * 64;
 
     // Color
-    float3 srgb = YCbCrToSRGB(y, cbcr);
+    float3 srgb = YCbCrToSRGB(y, cbcr) * conf;
 
     // Composite stencil/depth
     srgb = lerp(float3(0.5, 0.5, 0.5) * y, srgb, mask);
     srgb = lerp(srgb, float3(y, 0, 0), saturate(depth / 2));
 
-    // Letterboxing with 16:9
-    srgb *= 0 < uv.x && uv.x < 1;
-
     // Output
     return float4(GammaToLinearSpace(srgb), 1);
-    */
 }
 
     ENDCG
