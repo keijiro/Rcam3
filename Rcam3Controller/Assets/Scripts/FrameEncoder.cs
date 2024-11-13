@@ -3,20 +3,18 @@ using UnityEngine.XR.ARFoundation;
 
 namespace Rcam3 {
 
-public sealed class Controller : MonoBehaviour
+public sealed class FrameEncoder : MonoBehaviour
 {
     #region Editable attributes
 
     [Space]
     [SerializeField] ARCameraManager _cameraManager = null;
     [SerializeField] AROcclusionManager _occlusionManager = null;
-    [SerializeField] Camera _camera = null;
-    [Space]
-    [SerializeField] RenderTexture _senderTexture = null;
-    [SerializeField] RenderTexture _monitorTexture = null;
     [Space]
     [SerializeField] float _minDepth = 0.2f;
     [SerializeField] float _maxDepth = 3.2f;
+    [Space]
+    [SerializeField] RenderTexture _output = null;
 
     #endregion
 
@@ -28,6 +26,7 @@ public sealed class Controller : MonoBehaviour
 
     #region Private members
 
+    Camera _camera;
     Matrix4x4 _projMatrix;
     Material _muxMaterial;
     RenderTexture _muxRT;
@@ -85,11 +84,14 @@ public sealed class Controller : MonoBehaviour
 
     void Start()
     {
+        // Component reference
+        _camera = _cameraManager.GetComponent<Camera>();
+
         // Shader setup
         _muxMaterial = new Material(_muxShader);
 
         // Muxer buffer allocation
-        _muxRT = new RenderTexture(_senderTexture.width, _senderTexture.height, 0);
+        _muxRT = new RenderTexture(_output.width, _output.height, 0);
         _muxRT.wrapMode = TextureWrapMode.Clamp;
         _muxRT.Create();
     }
@@ -120,12 +122,11 @@ public sealed class Controller : MonoBehaviour
         var range = new Vector2(_minDepth, _maxDepth);
         _muxMaterial.SetVector(ShaderID.DepthRange, range);
 
-        // Sender RT update
-        Graphics.CopyTexture(_muxRT, _senderTexture);
-        Graphics.Blit(null, _muxRT, _muxMaterial, 0);
+        // Delayed output
+        Graphics.CopyTexture(_muxRT, _output);
 
-        // Monitor RT update
-        Graphics.Blit(null, _monitorTexture, _muxMaterial, 1);
+        // Multiplexer invocation
+        Graphics.Blit(null, _muxRT, _muxMaterial, 0);
     }
 
     #endregion

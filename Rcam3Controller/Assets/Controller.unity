@@ -468,11 +468,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cameraManager: {fileID: 2068282921}
   _occlusionManager: {fileID: 2068282920}
-  _camera: {fileID: 2068282922}
-  _senderTexture: {fileID: 8400000, guid: 84f6cc81d4a364f0f95c287ac930c9bd, type: 2}
-  _monitorTexture: {fileID: 8400000, guid: 61952a7a73590440ab4078f333a1caaa, type: 2}
   _minDepth: 0.2
   _maxDepth: 3.2
+  _output: {fileID: 8400000, guid: 84f6cc81d4a364f0f95c287ac930c9bd, type: 2}
   _muxShader: {fileID: 4800000, guid: 523e1189ec82844909560eb8184b9441, type: 3}
 --- !u!1 &1723859039
 GameObject:
