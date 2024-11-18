@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
+using Klak.Ndi;
 
 namespace Rcam3 {
 
@@ -10,11 +11,13 @@ public sealed class FrameEncoder : MonoBehaviour
     [Space]
     [SerializeField] ARCameraManager _cameraManager = null;
     [SerializeField] AROcclusionManager _occlusionManager = null;
+    [SerializeField] NdiSender _ndiSender = null;
     [Space]
     [SerializeField] float _minDepth = 0.2f;
     [SerializeField] float _maxDepth = 3.2f;
     [Space]
     [SerializeField] RenderTexture _output = null;
+    [SerializeField] InputHandle _input = null;
 
     #endregion
 
@@ -27,9 +30,17 @@ public sealed class FrameEncoder : MonoBehaviour
     #region Private members
 
     Camera _camera;
+
     Matrix4x4 _projMatrix;
     Material _muxMaterial;
     RenderTexture _muxRT;
+
+    Metadata MakeMetadata()
+      => new Metadata { CameraPosition = _camera.transform.position,
+                        CameraRotation = _camera.transform.rotation,
+                        ProjectionMatrix = _projMatrix,
+                        DepthRange = new Vector2(_minDepth, _maxDepth),
+                        InputState = _input.InputState };
 
     #endregion
 
@@ -118,6 +129,9 @@ public sealed class FrameEncoder : MonoBehaviour
 
     void Update()
     {
+        // Metadata update
+        _ndiSender.metadata = MakeMetadata().Serialize();
+
         // Parameter update
         var range = new Vector2(_minDepth, _maxDepth);
         _muxMaterial.SetVector(ShaderID.DepthRange, range);

@@ -234,6 +234,12 @@
       },
       "url": "https://registry.npmjs.com"
     },
+    "jp.keijiro.rcam3.common": {
+      "version": "file:../../Rcam3Common",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.modules.hierarchycore": {
       "version": "1.0.0",
       "depth": 1,

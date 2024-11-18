@@ -1,0 +1,11 @@
+{
+    "author": "Keijiro Takahashi",
+    "dependencies": { },
+    "description": "The common components of Rcam3.",
+    "displayName": "Rcam3 Common",
+    "keywords": [ "unity" ],
+    "name": "jp.keijiro.rcam3.common",
+    "unity": "6000.0",
+    "unityRelease": "0f1",
+    "version": "1.0.0"
+}
