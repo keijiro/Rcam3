@@ -1,6 +1,9 @@
 #ifndef __RCAM_COMMON_HLSL__
 #define __RCAM_COMMON_HLSL__
 
+static const float RcamDepthHueMargin = 0.01;
+static const float RcamDepthHuePadding = 0.01;
+
 // yCbCr decoding
 float3 RcamYCbCrToSRGB(float y, float2 cbcr)
 {
@@ -20,19 +23,42 @@ float3 RcamHue2RGB(float hue)
     return saturate(float3(r, g, b));
 }
 
+// Hue decoding
+float RcamRGB2Hue(float3 c)
+{
+    float minc = min(min(c.r, c.g), c.b);
+    float maxc = max(max(c.r, c.g), c.b);
+    float div = 1 / (6 * max(maxc - minc, 1e-5));
+    float r = (c.g - c.b) * div;
+    float g = 1.0 / 3 + (c.b - c.r) * div;
+    float b = 2.0 / 3 + (c.r - c.g) * div;
+    float h = lerp(r, lerp(g, b, c.g < c.b), c.r < max(c.g, c.b));
+    return frac(h + 1);
+}
+
 // Depth encoding
 float3 RcamEncodeDepth(float depth, float2 range)
 {
-    const float DepthHueMargin = 0.01;
-    const float DepthHuePadding = 0.01;
     // Depth range
     depth = (depth - range.x) / (range.y - range.x);
     // Padding
-    depth = depth * (1 - DepthHuePadding * 2) + DepthHuePadding;
+    depth = depth * (1 - RcamDepthHuePadding * 2) + RcamDepthHuePadding;
     // Margin
-    depth = saturate(depth) * (1 - DepthHueMargin * 2) + DepthHueMargin;
+    depth = saturate(depth) * (1 - RcamDepthHueMargin * 2) + RcamDepthHueMargin;
     // Hue encoding
     return RcamHue2RGB(depth);
+}
+
+// Depth decoding
+float RcamDecodeDepth(float3 rgb, float2 range)
+{
+    // Hue decoding
+    float depth = RcamRGB2Hue(rgb);
+    // Padding/margin
+    depth = (depth - RcamDepthHueMargin ) / (1 - RcamDepthHueMargin  * 2);
+    depth = (depth - RcamDepthHuePadding) / (1 - RcamDepthHuePadding * 2);
+    // Depth range
+    return lerp(range.x, range.y, depth);
 }
 
 // Linear distance to Z depth
