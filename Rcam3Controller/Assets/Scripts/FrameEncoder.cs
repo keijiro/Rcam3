@@ -102,7 +102,7 @@ public sealed class FrameEncoder : MonoBehaviour
         _muxMaterial = new Material(_muxShader);
 
         // Muxer buffer allocation
-        _muxRT = new RenderTexture(_output.width, _output.height, 0);
+        _muxRT = new RenderTexture(_output.descriptor);
         _muxRT.wrapMode = TextureWrapMode.Clamp;
         _muxRT.Create();
     }
