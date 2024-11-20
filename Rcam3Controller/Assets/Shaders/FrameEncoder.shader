@@ -44,7 +44,7 @@ float4 Fragment(float4 vertex : SV_Position,
 
     // Texture samples
     float y = tex2D(_textureY, tc.zy).x;
-    float2 cbcr = tex2D(_textureCbCr, tc.zy).yx;
+    float2 cbcr = tex2D(_textureCbCr, tc.zy).xy;
     float mask = tex2D(_HumanStencil, tc.zw).x;
     float depth = tex2D(_EnvironmentDepth, tc.zw).x;
 
@@ -56,6 +56,8 @@ float4 Fragment(float4 vertex : SV_Position,
 
     // Mask plane
     float3 c3 = mask;
+
+    return float4(saturate(GammaToLinearSpace(float3(texCoord.x, 0, texCoord.y))), 1);
 
     // Output
     float3 srgb = tc.x < 0.5 ? c1 : (tc.y < 0.5 ? c2 : c3);
