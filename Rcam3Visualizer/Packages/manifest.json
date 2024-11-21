@@ -1,6 +1,10 @@
 {
   "dependencies": {
-    "com.unity.render-pipelines.universal": "17.0.3"
+    "com.unity.inputsystem": "1.11.2",
+    "com.unity.modules.uielements": "1.0.0",
+    "com.unity.render-pipelines.universal": "17.0.3",
+    "jp.keijiro.klak.ndi": "2.1.3",
+    "jp.keijiro.rcam3.common": "file:../../Rcam3Common"
   },
   "scopedRegistries": [
     {
