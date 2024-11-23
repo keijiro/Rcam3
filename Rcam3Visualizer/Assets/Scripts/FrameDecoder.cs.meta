@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: 552ce9ea47d6f45a0b0690c36815a5c9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _ndiReceiver: {instanceID: 0}
+  - _lut: {fileID: 8534537815417165676, guid: 244beb38c4aca46d38429ea743939884, type: 3}
+  - _colorDecoder: {fileID: -876546973899608171, guid: 74957781651b549b3998e2eb3edf1d05, type: 3}
+  - _depthDecoder: {fileID: -876546973899608171, guid: b31475ba2b6b74d8c98632edce07acbc, type: 3}
+  - _maskDecoder: {fileID: -876546973899608171, guid: e7553f48f76d547feb5a279195d1b370, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -12,7 +12,7 @@ Shader "Hidden/Rcam3/FrameEncoder"
     CGINCLUDE
 
 #include "UnityCG.cginc"
-#include "RcamCommon.hlsl"
+#include "Packages/jp.keijiro.rcam3.common/Shaders/RcamCommon.hlsl"
 
 // Uniforms from AR Foundation
 sampler2D _textureY;

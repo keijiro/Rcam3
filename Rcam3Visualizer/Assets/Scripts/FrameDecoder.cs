@@ -14,14 +14,18 @@ public sealed class FrameDecoder : MonoBehaviour
 
     #region Project asset refnerence
 
-    [SerializeField, HideInInspector] Shader _demuxShader = null;
+    [SerializeField, HideInInspector] Material _colorDecoder = null;
+    [SerializeField, HideInInspector] Material _depthDecoder = null;
+    [SerializeField, HideInInspector] Material _maskDecoder  = null;
 
     #endregion
 
     #region Public accessor properties
 
-    public RenderTexture ColorTexture => _planes.color;
-    public RenderTexture DepthTexture => _planes.depth;
+    public RenderTexture ColorTexture => _decoded.color;
+    public RenderTexture DepthTexture => _decoded.depth;
+    public RenderTexture MaskTexture  => _decoded.mask;
+
     public Matrix4x4 ProjectionMatrix => _metadata.ProjectionMatrix;
     public Vector3 CameraPosition => _metadata.CameraPosition;
     public Quaternion CameraRotation => _metadata.CameraRotation;
@@ -35,38 +39,34 @@ public sealed class FrameDecoder : MonoBehaviour
 
     #region Private members
 
-    (RenderTexture color, RenderTexture depth) _planes;
+    (RenderTexture color, RenderTexture depth, RenderTexture mask) _decoded;
     Metadata _metadata = Metadata.InitialData;
-    Material _demuxer;
 
     #endregion
 
     #region MonoBehaviour implementation
 
     void Start()
-    {
-        _demuxer = new Material(_demuxShader);
-        _demuxer.SetTexture("_LutTex", _lut);
-    }
+      => _colorDecoder.SetTexture(ShaderID.LutTexture, _lut);
 
     void OnDestroy()
     {
-        Destroy(_planes.color);
-        Destroy(_planes.depth);
-        Destroy(_demuxer);
+        Destroy(_decoded.color);
+        Destroy(_decoded.depth);
+        Destroy(_decoded.mask);
     }
 
     void Update()
     {
-        UpdateMetadata();
-        UpdatePlanes();
+        DecodeMetadata();
+        DecodeImage();
     }
 
     #endregion
 
     #region Metadata decoding
 
-    void UpdateMetadata()
+    void DecodeMetadata()
     {
         var xml = _ndiReceiver.metadata;
         if (xml == null || xml.Length == 0) return;
@@ -77,30 +77,35 @@ public sealed class FrameDecoder : MonoBehaviour
 
     #region Image plane decoding
 
-    void UpdatePlanes()
+    void DecodeImage()
     {
         var source = _ndiReceiver.texture;
         if (source == null) return;
 
         // Lazy initialization
-        if (_planes.color == null) AllocatePlanes(source);
+        if (_decoded.color == null) AllocatePlanes(source);
 
         // Parameters from metadata
-        _demuxer.SetVector(ShaderID.DepthRange, _metadata.DepthRange);
+        _depthDecoder.SetVector(ShaderID.DepthRange, _metadata.DepthRange);
 
-        // Blit (color/depth)
-        Graphics.Blit(source, _planes.color, _demuxer, 0);
-        Graphics.Blit(source, _planes.depth, _demuxer, 1);
+        // Decoder invocation blit
+        Graphics.Blit(source, _decoded.color, _colorDecoder);
+        Graphics.Blit(source, _decoded.depth, _depthDecoder);
+        Graphics.Blit(source, _decoded.mask,  _maskDecoder);
     }
 
     void AllocatePlanes(RenderTexture source)
     {
         var w = source.width / 2;
         var h = source.height / 2;
-        _planes.color = new RenderTexture(w, h * 2, 0);
-        _planes.depth = new RenderTexture(w, h, 0, RenderTextureFormat.RHalf);
-        _planes.color.wrapMode = TextureWrapMode.Clamp;
-        _planes.depth.wrapMode = TextureWrapMode.Clamp;
+
+        _decoded.color = new RenderTexture(w, h * 2, 0);
+        _decoded.depth = new RenderTexture(w, h, 0, RenderTextureFormat.RHalf);
+        _decoded.mask  = new RenderTexture(w, h, 0);
+
+        _decoded.color.wrapMode = TextureWrapMode.Clamp;
+        _decoded.depth.wrapMode = TextureWrapMode.Clamp;
+        _decoded.mask .wrapMode = TextureWrapMode.Clamp;
     }
 
     #endregion

@@ -1,4 +1,4 @@
-#include "RcamCommon.hlsl"
+#include "Packages/jp.keijiro.rcam3.common/Shaders/RcamCommon.hlsl"
 
 void RcamMonitor_float(UnityTexture2D source, float2 spos, float2 sdims, out float3 output)
 {
