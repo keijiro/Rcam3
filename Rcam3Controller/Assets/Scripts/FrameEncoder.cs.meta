@@ -6,8 +6,10 @@ MonoImporter:
   defaultReferences:
   - _cameraManager: {instanceID: 0}
   - _occlusionManager: {instanceID: 0}
+  - _ndiSender: {instanceID: 0}
   - _output: {fileID: 8400000, guid: 84f6cc81d4a364f0f95c287ac930c9bd, type: 2}
-  - _muxShader: {fileID: 4800000, guid: 523e1189ec82844909560eb8184b9441, type: 3}
+  - _input: {instanceID: 0}
+  - _encoder: {fileID: -876546973899608171, guid: 3ab8b845075424a69b9fa8942a951ef4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

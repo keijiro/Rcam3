@@ -21,9 +21,9 @@ public sealed class FrameEncoder : MonoBehaviour
 
     #endregion
 
-    #region Hidden asset reference
+    #region Project asset reference
 
-    [SerializeField, HideInInspector] Shader _muxShader = null;
+    [SerializeField, HideInInspector] Material _encoder = null;
 
     #endregion
 
@@ -32,8 +32,7 @@ public sealed class FrameEncoder : MonoBehaviour
     Camera _camera;
 
     Matrix4x4 _projMatrix;
-    Material _muxMaterial;
-    RenderTexture _muxRT;
+    RenderTexture _encoded;
 
     Metadata MakeMetadata()
       => new Metadata { CameraPosition = _camera.transform.position,
@@ -55,7 +54,7 @@ public sealed class FrameEncoder : MonoBehaviour
         {
             var id = args.propertyNameIds[i];
             if (id == ShaderID.TextureY || id == ShaderID.TextureCbCr)
-                _muxMaterial.SetTexture(id, args.textures[i]);
+                _encoder.SetTexture(id, args.textures[i]);
         }
 
         // Projection matrix
@@ -73,7 +72,7 @@ public sealed class FrameEncoder : MonoBehaviour
 
         // Aspect ratio compensation factor for the multiplexer
         var aspectFix = texAspect / (16.0f / 9);
-        _muxMaterial.SetFloat(ShaderID.AspectFix, aspectFix);
+        _encoder.SetFloat(ShaderID.AspectFix, aspectFix);
     }
 
     void OnOcclusionFrameReceived(AROcclusionFrameEventArgs args)
@@ -85,7 +84,7 @@ public sealed class FrameEncoder : MonoBehaviour
             if (id == ShaderID.HumanStencil ||
                 id == ShaderID.EnvironmentDepth ||
                 id == ShaderID.EnvironmentDepthConfidence)
-                _muxMaterial.SetTexture(id, args.textures[i]);
+                _encoder.SetTexture(id, args.textures[i]);
         }
     }
 
@@ -98,20 +97,14 @@ public sealed class FrameEncoder : MonoBehaviour
         // Component reference
         _camera = _cameraManager.GetComponent<Camera>();
 
-        // Shader setup
-        _muxMaterial = new Material(_muxShader);
-
         // Muxer buffer allocation
-        _muxRT = new RenderTexture(_output.descriptor);
-        _muxRT.wrapMode = TextureWrapMode.Clamp;
-        _muxRT.Create();
+        _encoded = new RenderTexture(_output.descriptor);
+        _encoded.wrapMode = TextureWrapMode.Clamp;
+        _encoded.Create();
     }
 
     void OnDestroy()
-    {
-        Destroy(_muxMaterial);
-        Destroy(_muxRT);
-    }
+      => Destroy(_encoded);
 
     void OnEnable()
     {
@@ -134,13 +127,13 @@ public sealed class FrameEncoder : MonoBehaviour
 
         // Parameter update
         var range = new Vector2(_minDepth, _maxDepth);
-        _muxMaterial.SetVector(ShaderID.DepthRange, range);
+        _encoder.SetVector(ShaderID.DepthRange, range);
 
         // Delayed output
-        Graphics.CopyTexture(_muxRT, _output);
+        Graphics.CopyTexture(_encoded, _output);
 
         // Multiplexer invocation
-        Graphics.Blit(null, _muxRT, _muxMaterial, 0);
+        Graphics.Blit(null, _encoded, _encoder, 0);
     }
 
     #endregion
