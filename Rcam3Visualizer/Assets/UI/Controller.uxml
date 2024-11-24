@@ -2,6 +2,5 @@
     <engine:VisualElement name="monitor" style="position: absolute; right: 20px; bottom: 20px; flex-direction: row;">
         <engine:VisualElement name="monitor-color" style="height: 63px; width: 112px;" />
         <engine:VisualElement name="monitor-depth" style="width: 112px; height: 63px;" />
-        <engine:VisualElement name="monitor-mask" style="width: 112px; height: 63px;" />
     </engine:VisualElement>
 </engine:UXML>

@@ -4,6 +4,12 @@
 static const float RcamDepthHueMargin = 0.01;
 static const float RcamDepthHuePadding = 0.01;
 
+// Texture coordinate calculation
+uint3 RcamUV2TC(UnityTexture2D tex, float2 uv, float2 scale, float2 offset)
+{
+    return uint3((uv * scale + offset) * tex.texelSize.zw, 0);
+}
+
 // yCbCr decoding
 float3 RcamYCbCrToSRGB(float y, float2 cbcr)
 {

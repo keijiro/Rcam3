@@ -16,7 +16,6 @@ public sealed class FrameDecoder : MonoBehaviour
 
     [SerializeField, HideInInspector] Material _colorDecoder = null;
     [SerializeField, HideInInspector] Material _depthDecoder = null;
-    [SerializeField, HideInInspector] Material _maskDecoder  = null;
 
     #endregion
 
@@ -24,7 +23,6 @@ public sealed class FrameDecoder : MonoBehaviour
 
     public RenderTexture ColorTexture => _decoded.color;
     public RenderTexture DepthTexture => _decoded.depth;
-    public RenderTexture MaskTexture  => _decoded.mask;
 
     public Matrix4x4 ProjectionMatrix => _metadata.ProjectionMatrix;
     public Vector3 CameraPosition => _metadata.CameraPosition;
@@ -39,7 +37,7 @@ public sealed class FrameDecoder : MonoBehaviour
 
     #region Private members
 
-    (RenderTexture color, RenderTexture depth, RenderTexture mask) _decoded;
+    (RenderTexture color, RenderTexture depth) _decoded;
     Metadata _metadata = Metadata.InitialData;
 
     #endregion
@@ -53,7 +51,6 @@ public sealed class FrameDecoder : MonoBehaviour
     {
         Destroy(_decoded.color);
         Destroy(_decoded.depth);
-        Destroy(_decoded.mask);
     }
 
     void Update()
@@ -91,21 +88,16 @@ public sealed class FrameDecoder : MonoBehaviour
         // Decoder invocation blit
         Graphics.Blit(source, _decoded.color, _colorDecoder);
         Graphics.Blit(source, _decoded.depth, _depthDecoder);
-        Graphics.Blit(source, _decoded.mask,  _maskDecoder);
     }
 
     void AllocatePlanes(RenderTexture source)
     {
         var w = source.width / 2;
         var h = source.height / 2;
-
         _decoded.color = new RenderTexture(w, h * 2, 0);
         _decoded.depth = new RenderTexture(w, h, 0, RenderTextureFormat.RHalf);
-        _decoded.mask  = new RenderTexture(w, h, 0);
-
         _decoded.color.wrapMode = TextureWrapMode.Clamp;
         _decoded.depth.wrapMode = TextureWrapMode.Clamp;
-        _decoded.mask .wrapMode = TextureWrapMode.Clamp;
     }
 
     #endregion
