@@ -1,6 +1,8 @@
 #ifndef __RCAM_COMMON_HLSL__
 #define __RCAM_COMMON_HLSL__
 
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Texture.hlsl"
+
 static const float RcamDepthHueMargin = 0.01;
 static const float RcamDepthHuePadding = 0.01;
 
@@ -75,8 +77,7 @@ float RcamDistanceToDepth(float d)
 }
 
 // Inverse projection into the world space
-float3 RcamDistanceToWorldPosition
-  (float2 uv, float d, float4 proj, float4x4 inv_view)
+float3 RcamDistanceToWorldPosition(float2 uv, float d, float4 proj, float4x4 inv_view)
 {
     float3 p = float3((uv - 0.5) * 2, -1);
     p.xy += proj.xy;
