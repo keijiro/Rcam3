@@ -775,13 +775,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1873703071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da182326928a834829223cac101f282b, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b19924900cd4405b11930bc4477ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1874686797}
-  interpolator: 2
-  positionSpeed: 8
-  rotationSpeed: 8
+  <Target>k__BackingField: {fileID: 1874686797}
+  <Speed>k__BackingField: 4
 --- !u!1 &1874686795
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,7 +791,7 @@ GameObject:
   - component: {fileID: 1874686797}
   - component: {fileID: 1874686796}
   m_Layer: 0
-  m_Name: Virtual Camera
+  m_Name: Camera Tracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -985,8 +983,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1693156839}
+  - {fileID: 694569380}
+  - {fileID: 356116626}
   - {fileID: 1874686797}
   - {fileID: 1873703073}
-  - {fileID: 694569380}
   - {fileID: 1330519131}
-  - {fileID: 356116626}
