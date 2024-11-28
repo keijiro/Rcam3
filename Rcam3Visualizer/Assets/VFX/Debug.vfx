@@ -160,7 +160,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 280
     y: 287
-    width: 775
+    width: 774
     height: 2066
 --- !u!114 &114350483966674978
 MonoBehaviour:
@@ -720,7 +720,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":320.0,"y":180.0}'
+      m_SerializableObject: '{"x":512.0,"y":288.0}'
     m_Space: -1
   m_Property:
     name: o
@@ -1487,7 +1487,7 @@ MonoBehaviour:
   - {fileID: 114350483966675046}
   - {fileID: 114350483966675075}
   dataType: 0
-  capacity: 65536
+  capacity: 147456
   stripCapacity: 1
   particlePerStripCount: 128
   needsComputeBounds: 0
