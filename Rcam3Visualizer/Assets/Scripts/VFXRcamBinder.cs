@@ -15,10 +15,10 @@ public class RcamBinder : VFXBinderBase
     public ExposedProperty DepthMapProperty = "DepthMap";
 
     [VFXPropertyBinding("UnityEngine.Vector4")]
-    public ExposedProperty ProjectionVectorProperty = "ProjectionVector";
+    public ExposedProperty InverseProjectionProperty = "InverseProjection";
 
     [VFXPropertyBinding("UnityEngine.Matrix4x4")]
-    public ExposedProperty InverseViewMatrixProperty = "InverseViewMatrix";
+    public ExposedProperty InverseViewProperty = "InverseView";
 
     public FrameDecoder Target = null;
 
@@ -26,8 +26,8 @@ public class RcamBinder : VFXBinderBase
       => Target != null &&
          component.HasTexture(ColorMapProperty) &&
          component.HasTexture(DepthMapProperty) &&
-         component.HasVector4(ProjectionVectorProperty) &&
-         component.HasMatrix4x4(InverseViewMatrixProperty);
+         component.HasVector4(InverseProjectionProperty) &&
+         component.HasMatrix4x4(InverseViewProperty);
 
     public override void UpdateBinding(VisualEffect component)
     {
@@ -36,8 +36,8 @@ public class RcamBinder : VFXBinderBase
         var inv_view = CameraUtil.GetInverseView(Target.Metadata);
         component.SetTexture(ColorMapProperty, Target.ColorTexture);
         component.SetTexture(DepthMapProperty, Target.DepthTexture);
-        component.SetVector4(ProjectionVectorProperty, inv_proj);
-        component.SetMatrix4x4(InverseViewMatrixProperty, inv_view);
+        component.SetVector4(InverseProjectionProperty, inv_proj);
+        component.SetMatrix4x4(InverseViewProperty, inv_view);
     }
 
     public override string ToString()

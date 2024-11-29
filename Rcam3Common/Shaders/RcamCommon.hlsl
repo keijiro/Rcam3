@@ -77,10 +77,10 @@ float RcamDistanceToDepth(float d)
 }
 
 // Inverse projection into the world space
-float3 RcamDistanceToWorldPosition(float2 uv, float d, float4 proj, float4x4 inv_view)
+float3 RcamDistanceToWorldPosition(float2 uv, float d, float4 inv_proj, float4x4 inv_view)
 {
     float3 p = float3((uv - 0.5) * 2, 1);
-    p.xy = (p.xy * proj.xy) + proj.zw;
+    p.xy = (p.xy * inv_proj.xy) + inv_proj.zw;
     return mul(inv_view, float4(p * d, 1)).xyz;
 }
 

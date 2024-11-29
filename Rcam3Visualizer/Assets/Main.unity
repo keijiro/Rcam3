@@ -452,7 +452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1236087250
 Transform:
   m_ObjectHideFlags: 0
@@ -484,10 +484,10 @@ MonoBehaviour:
     m_Name: ColorMap
   DepthMapProperty:
     m_Name: DepthMap
-  ProjectionVectorProperty:
-    m_Name: ProjectionVector
-  InverseViewMatrixProperty:
-    m_Name: InverseViewMatrix
+  InverseProjectionProperty:
+    m_Name: InverseProjection
+  InverseViewProperty:
+    m_Name: InverseView
   Target: {fileID: 694569381}
 --- !u!114 &1236087252
 MonoBehaviour:
@@ -513,7 +513,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236087249}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -876,10 +876,10 @@ MonoBehaviour:
     m_Name: ColorMap
   DepthMapProperty:
     m_Name: DepthMap
-  ProjectionVectorProperty:
-    m_Name: ProjectionVector
-  InverseViewMatrixProperty:
-    m_Name: InverseViewMatrix
+  InverseProjectionProperty:
+    m_Name: InverseProjection
+  InverseViewProperty:
+    m_Name: InverseView
   Target: {fileID: 694569381}
 --- !u!114 &2062908485
 MonoBehaviour:
