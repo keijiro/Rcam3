@@ -6,26 +6,42 @@ namespace Rcam3 {
 
 // Rcam3 Metadata struct
 [StructLayout(LayoutKind.Sequential)]
-public unsafe struct Metadata
+public unsafe readonly struct Metadata
 {
     #region Data members
 
     // Camera pose
-    public Vector3 CameraPosition;
-    public Quaternion CameraRotation;
+    public readonly Vector3 CameraPosition;
+    public readonly Quaternion CameraRotation;
 
     // Camera parameters
-    public Matrix4x4 ProjectionMatrix;
-    public Vector2 DepthRange;
+    public readonly Matrix4x4 ProjectionMatrix;
+    public readonly Vector2 DepthRange;
 
     // Control input state
-    public InputState InputState;
+    public readonly InputState InputState;
+
+    // Constructor
+    public Metadata(Vector3 cameraPosition,
+                    Quaternion cameraRotation,
+                    Matrix4x4 projectionMatrix,
+                    Vector2 depthRange,
+                    InputState inputState)
+    {
+        CameraPosition = cameraPosition;
+        CameraRotation = cameraRotation;
+        ProjectionMatrix = projectionMatrix;
+        DepthRange = depthRange;
+        InputState = inputState;
+    }
 
     // Initial data constructor
     public static Metadata InitialData => new Metadata
-      { CameraRotation = Quaternion.identity,
-        ProjectionMatrix = Matrix4x4.Perspective(45, 16.0f / 9, 0.1f, 10),
-        DepthRange = new Vector2(0.1f, 10) };
+      (cameraPosition: Vector3.zero,
+       cameraRotation: Quaternion.identity,
+       projectionMatrix: Matrix4x4.Perspective(45, 16.0f / 9, 0.1f, 10),
+       depthRange: new Vector2(0.1f, 10),
+       inputState: default(InputState));
 
     #endregion
 

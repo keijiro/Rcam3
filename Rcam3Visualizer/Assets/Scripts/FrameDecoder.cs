@@ -23,12 +23,7 @@ public sealed class FrameDecoder : MonoBehaviour
 
     public RenderTexture ColorTexture => _decoded.color;
     public RenderTexture DepthTexture => _decoded.depth;
-
-    public Vector3 CameraPosition => _metadata.CameraPosition;
-    public Quaternion CameraRotation => _metadata.CameraRotation;
-    public Matrix4x4 ProjectionMatrix => _metadata.ProjectionMatrix;
-    public Vector4 ProjectionParams => ProjectionUtil.ProjectionParams(_metadata);
-    public Matrix4x4 CameraToWorld => ProjectionUtil.CameraToWorld(_metadata);
+    public ref readonly Metadata Metadata => ref _metadata;
 
     #endregion
 

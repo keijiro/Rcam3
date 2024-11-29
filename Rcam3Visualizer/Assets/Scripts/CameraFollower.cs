@@ -19,7 +19,6 @@ public sealed class CameraFollower : MonoBehaviour
     {
         _position = CdsTween.Step(_position, Target.position, Speed);
         _rotation = CdsTween.Step(_rotation, XYRotation, Speed);
-
         transform.position = _position.x;
         transform.rotation = _rotation.x;
     }

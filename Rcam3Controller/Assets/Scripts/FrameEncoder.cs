@@ -36,11 +36,11 @@ public sealed class FrameEncoder : MonoBehaviour
     RenderTexture _encoded;
 
     Metadata MakeMetadata()
-      => new Metadata { CameraPosition = _camera.transform.position,
-                        CameraRotation = _camera.transform.rotation,
-                        ProjectionMatrix = _projMatrix,
-                        DepthRange = new Vector2(_minDepth, _maxDepth),
-                        InputState = _input.InputState };
+      => new Metadata(cameraPosition: _camera.transform.position,
+                      cameraRotation: _camera.transform.rotation,
+                      projectionMatrix: _projMatrix,
+                      depthRange: new Vector2(_minDepth, _maxDepth),
+                      inputState: _input.InputState);
 
     #endregion
 

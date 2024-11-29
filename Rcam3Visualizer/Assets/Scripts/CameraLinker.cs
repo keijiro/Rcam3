@@ -61,8 +61,9 @@ public sealed class CameraLinker : MonoBehaviour
 
     void LateUpdate()
     {
-        if (_camera != null) UpdateCamera(_decoder.ProjectionMatrix);
-        UpdateTransform(_decoder.CameraPosition, _decoder.CameraRotation);
+        ref readonly var data = ref _decoder.Metadata;
+        if (_camera != null) UpdateCamera(data.ProjectionMatrix);
+        UpdateTransform(data.CameraPosition, data.CameraRotation);
     }
 
     #endregion
