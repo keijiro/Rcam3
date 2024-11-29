@@ -24,14 +24,11 @@ public sealed class FrameDecoder : MonoBehaviour
     public RenderTexture ColorTexture => _decoded.color;
     public RenderTexture DepthTexture => _decoded.depth;
 
-    public Matrix4x4 ProjectionMatrix => _metadata.ProjectionMatrix;
     public Vector3 CameraPosition => _metadata.CameraPosition;
     public Quaternion CameraRotation => _metadata.CameraRotation;
-    public Matrix4x4 CameraToWorldMatrix => CalculateCameraToWorldMatrix();
-
-    Matrix4x4 CalculateCameraToWorldMatrix()
-      => CameraPosition == Vector3.zero ? Matrix4x4.identity :
-         Matrix4x4.TRS(CameraPosition, CameraRotation, new Vector3(1, 1, -1));
+    public Matrix4x4 ProjectionMatrix => _metadata.ProjectionMatrix;
+    public Vector4 ProjectionParams => ProjectionUtil.ProjectionParams(_metadata);
+    public Matrix4x4 CameraToWorld => ProjectionUtil.CameraToWorld(_metadata);
 
     #endregion
 

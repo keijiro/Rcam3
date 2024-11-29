@@ -32,12 +32,10 @@ public class RcamBinder : VFXBinderBase
     public override void UpdateBinding(VisualEffect component)
     {
         if (Target.ColorTexture == null) return;
-        var prj = ProjectionUtil.GetVector(Target.ProjectionMatrix);
-        var v2w = Target.CameraToWorldMatrix;
         component.SetTexture(ColorMapProperty, Target.ColorTexture);
         component.SetTexture(DepthMapProperty, Target.DepthTexture);
-        component.SetVector4(ProjectionVectorProperty, prj);
-        component.SetMatrix4x4(InverseViewMatrixProperty, v2w);
+        component.SetVector4(ProjectionVectorProperty, Target.ProjectionParams);
+        component.SetMatrix4x4(InverseViewMatrixProperty, Target.CameraToWorld);
     }
 
     public override string ToString()

@@ -14,10 +14,4 @@ static class ShaderID
     public static readonly int ProjectionVector = Shader.PropertyToID("_ProjectionVector");
 }
 
-static class ProjectionUtil
-{
-    public static Vector4 GetVector(in Matrix4x4 m)
-      => new Vector4(m[0, 2], m[1, 2], m[0, 0], m[1, 1]);
-}
-
 } // namespace Rcam3

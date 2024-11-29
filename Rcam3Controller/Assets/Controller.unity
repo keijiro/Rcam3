@@ -355,6 +355,7 @@ MonoBehaviour:
   _cameraManager: {fileID: 2068282921}
   _occlusionManager: {fileID: 2068282920}
   _ndiSender: {fileID: 1723859040}
+  _monitor: {fileID: 2038147852}
   _minDepth: 0.2
   _maxDepth: 3.2
   _output: {fileID: 8400000, guid: 84f6cc81d4a364f0f95c287ac930c9bd, type: 2}
@@ -529,6 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2038147849}
+  - component: {fileID: 2038147852}
   - component: {fileID: 2038147851}
   - component: {fileID: 2038147850}
   m_Layer: 0
@@ -606,6 +608,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038147848}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2038147852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038147848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704b8692d42994c25a3a350aee0c1225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2068282916
 GameObject:
   m_ObjectHideFlags: 0

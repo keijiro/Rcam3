@@ -12,6 +12,7 @@ public sealed class FrameEncoder : MonoBehaviour
     [SerializeField] ARCameraManager _cameraManager = null;
     [SerializeField] AROcclusionManager _occlusionManager = null;
     [SerializeField] NdiSender _ndiSender = null;
+    [SerializeField] Monitor _monitor = null;
     [Space]
     [SerializeField] float _minDepth = 0.2f;
     [SerializeField] float _maxDepth = 3.2f;
@@ -123,7 +124,9 @@ public sealed class FrameEncoder : MonoBehaviour
     void Update()
     {
         // Metadata update
-        _ndiSender.metadata = MakeMetadata().Serialize();
+        var meta = MakeMetadata();
+        _ndiSender.metadata = meta.Serialize();
+        _monitor.Metadata = meta;
 
         // Parameter update
         var range = new Vector2(_minDepth, _maxDepth);
