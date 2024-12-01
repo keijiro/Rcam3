@@ -1,0 +1,5 @@
+.unity-label {
+    color: rgb(255, 255, 255);
+    min-width: auto;
+    -unity-text-align: middle-left;
+}
