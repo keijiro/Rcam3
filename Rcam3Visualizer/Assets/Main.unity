@@ -434,15 +434,35 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!45 &1107918124
-Skybox:
+--- !u!114 &1107918124
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107918120}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: -876546973899608171, guid: 9f8708b7ddc3f4fa1932f7242f05db2c, type: 3}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6fa6944d5d2d4c099b5449a098d1841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gradient:
+    R:
+      x: 0.5
+      y: 0.5
+      z: 1
+      w: 0
+    G:
+      x: 0.5
+      y: 0.5
+      z: 1
+      w: 0.33333334
+    B:
+      x: 0.5
+      y: 0.5
+      z: 1
+      w: 0.6666667
+  _shader: {fileID: -6465566751694194690, guid: 9f8708b7ddc3f4fa1932f7242f05db2c, type: 3}
 --- !u!1 &1236087249
 GameObject:
   m_ObjectHideFlags: 0
