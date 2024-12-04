@@ -448,20 +448,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gradient:
     R:
-      x: 0.5
-      y: 0.5
+      x: 0.14
+      y: 0.19
       z: 1
-      w: 0
+      w: 0.72
     G:
-      x: 0.5
-      y: 0.5
+      x: 0.17
+      y: 0.11
       z: 1
-      w: 0.33333334
+      w: 0.26
     B:
-      x: 0.5
-      y: 0.5
-      z: 1
-      w: 0.6666667
+      x: 0.11
+      y: 0.25
+      z: 0.8
+      w: 0.34
   _shader: {fileID: -6465566751694194690, guid: 9f8708b7ddc3f4fa1932f7242f05db2c, type: 3}
 --- !u!1 &1236087249
 GameObject:
