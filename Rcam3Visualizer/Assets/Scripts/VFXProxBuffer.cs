@@ -56,7 +56,7 @@ public sealed class VFXProxBuffer : MonoBehaviour
         _buffer = (null, null);
     }
 
-    void Update()
+    void LateUpdate()
     {
         Shader.SetGlobalVector(ShaderID.VFXProx_CellSize, Extent / CellsPerAxis);
         _compute.DispatchThreads(0, CellsPerAxis, CellsPerAxis, CellsPerAxis);

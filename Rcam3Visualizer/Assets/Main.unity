@@ -404,7 +404,7 @@ VFXRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657373276}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d94d641be1f4f9983f35fad3984f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Extent>k__BackingField: {x: 2, y: 2, z: 2}
+  <Extent>k__BackingField: {x: 1, y: 1, z: 1}
   _compute: {fileID: 7200000, guid: 16891813f1cc44d06bc8a17b872785e4, type: 3}
 --- !u!1 &1236087249
 GameObject:
