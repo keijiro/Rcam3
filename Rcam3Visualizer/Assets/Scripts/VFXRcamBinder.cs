@@ -6,7 +6,7 @@ namespace Rcam3 {
 
 [AddComponentMenu("VFX/Property Binders/Rcam Binder")]
 [VFXBinder("Rcam")]
-public class RcamBinder : VFXBinderBase
+public sealed class RcamBinder : VFXBinderBase
 {
     [VFXPropertyBinding("UnityEngine.Texture2D")]
     public ExposedProperty ColorMapProperty = "ColorMap";
@@ -45,4 +45,3 @@ public class RcamBinder : VFXBinderBase
 }
 
 } // namespace Rcam3
-

@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 657373280}
   - component: {fileID: 657373279}
   - component: {fileID: 657373278}
+  - component: {fileID: 657373282}
   m_Layer: 0
   m_Name: Plexus
   m_TagString: Untagged
@@ -392,6 +393,7 @@ MonoBehaviour:
   m_ExecuteInEditor: 1
   m_Bindings:
   - {fileID: 657373278}
+  - {fileID: 657373282}
   m_VisualEffect: {fileID: 657373281}
 --- !u!73398921 &657373280
 VFXRenderer:
@@ -457,7 +459,10 @@ VisualEffect:
     m_Vector2f:
       m_Array: []
     m_Vector3f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0, y: 0, z: 0.5}
+        m_Name: Origin
+        m_Overridden: 1
     m_Vector4f:
       m_Array: []
     m_Uint:
@@ -474,6 +479,22 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &657373282
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657373276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c3070554d0a8944a95ff8f018c2c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Space: 1
+  m_Property:
+    m_Name: Origin
+  Target: {fileID: 969721247}
 --- !u!1 &694569378
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,6 +865,52 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!1 &1112802880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1112802881}
+  - component: {fileID: 1112802882}
+  m_Layer: 0
+  m_Name: Prox Buffer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1112802881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112802880}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1330519131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112802882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112802880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d94d641be1f4f9983f35fad3984f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Extent>k__BackingField: {x: 2, y: 2, z: 2}
+  _compute: {fileID: 7200000, guid: 16891813f1cc44d06bc8a17b872785e4, type: 3}
 --- !u!1 &1236087249
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1236087251}
   m_VisualEffect: {fileID: 1236087254}
 --- !u!73398921 &1236087253
 VFXRenderer:
@@ -1027,6 +1095,7 @@ Transform:
   m_Children:
   - {fileID: 1484006032}
   - {fileID: 1660139045}
+  - {fileID: 1112802881}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484006031
