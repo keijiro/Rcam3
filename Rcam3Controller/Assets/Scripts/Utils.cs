@@ -4,7 +4,6 @@ namespace Rcam3 {
 
 static class ShaderID
 {
-    public static readonly int AspectFix = Shader.PropertyToID("_AspectFix");
     public static readonly int DepthRange = Shader.PropertyToID("_DepthRange");
     public static readonly int EnvironmentDepth = Shader.PropertyToID("_EnvironmentDepth");
     public static readonly int EnvironmentDepthConfidence = Shader.PropertyToID("_EnvironmentDepthConfidence");

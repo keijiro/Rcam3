@@ -6,7 +6,8 @@ void RcamMonitor_float
    out float3 output)
 {
     float2 uv = sPos / sDims;
-    uv = (uv - 0.5) * float2(9.0 / 16 * sDims.x / sDims.y, -1) + 0.5;
+    uv.x = (uv.x - 0.5) * sDims.x * invProj.y / (sDims.y * invProj.x) + 0.5;
+    uv.y = 1 - uv.y;
 
     // Area fill
     float2 border = source.texelSize.xy * 2;

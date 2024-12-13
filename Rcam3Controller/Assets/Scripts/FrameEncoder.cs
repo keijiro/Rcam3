@@ -63,17 +63,13 @@ public sealed class FrameEncoder : MonoBehaviour
         {
             _projMatrix = args.projectionMatrix.Value;
 
-            // Aspect ratio compensation (camera vs. 16:9)
-            _projMatrix[1, 1] *= (16.0f / 9) / _camera.aspect;
+            // Texture aspect ratio
+            var tex1 = args.textures[0];
+            var texAspect = (float)tex1.width / tex1.height;
+
+            // Aspect ratio compensation (camera vs. texture)
+            _projMatrix[1, 1] *= texAspect / _camera.aspect;
         }
-
-        // Source texture aspect ratio from the first texture
-        var tex1 = args.textures[0];
-        var texAspect = (float)tex1.width / tex1.height;
-
-        // Aspect ratio compensation factor for the multiplexer
-        var aspectFix = texAspect / (16.0f / 9);
-        _encoder.SetFloat(ShaderID.AspectFix, aspectFix);
     }
 
     void OnOcclusionFrameReceived(AROcclusionFrameEventArgs args)

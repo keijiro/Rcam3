@@ -13,8 +13,8 @@ void EncodeFrame_float
 {
     float4 tc = frac(UV.xyxy * float4(1, 1, 2, 2));
 
-    // Aspect ratio compensation & vertical flip
-    tc.yw = (0.5 - tc.yw) * AspectFix + 0.5;
+    // Vertical flip
+    tc.yw = 1 - tc.yw;
 
     // Texture samples
     float y = tex2D(YTex, tc.zy).x;
