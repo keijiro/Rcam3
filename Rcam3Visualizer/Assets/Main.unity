@@ -132,14 +132,13 @@ GameObject:
   - component: {fileID: 87468201}
   - component: {fileID: 87468200}
   - component: {fileID: 87468199}
-  - component: {fileID: 87468198}
   m_Layer: 0
-  m_Name: Spray
+  m_Name: Sweeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &87468197
 Transform:
   m_ObjectHideFlags: 0
@@ -155,22 +154,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1660139045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &87468198
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87468196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c3070554d0a8944a95ff8f018c2c9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Space: 1
-  m_Property:
-    m_Name: Origin
-  Target: {fileID: 969721247}
 --- !u!114 &87468199
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -207,7 +190,6 @@ MonoBehaviour:
   m_ExecuteInEditor: 1
   m_Bindings:
   - {fileID: 87468199}
-  - {fileID: 87468198}
   m_VisualEffect: {fileID: 87468202}
 --- !u!73398921 &87468201
 VFXRenderer:
@@ -217,7 +199,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87468196}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1026,7 +1008,10 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 0
+        m_Name: Ripple
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
