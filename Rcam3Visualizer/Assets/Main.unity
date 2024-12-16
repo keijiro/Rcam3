@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 87468201}
   - component: {fileID: 87468200}
   - component: {fileID: 87468199}
+  - component: {fileID: 87468203}
   m_Layer: 0
   m_Name: Sweeper
   m_TagString: Untagged
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_ExecuteInEditor: 1
   m_Bindings:
   - {fileID: 87468199}
+  - {fileID: 87468203}
   m_VisualEffect: {fileID: 87468202}
 --- !u!73398921 &87468201
 VFXRenderer:
@@ -255,6 +257,9 @@ VisualEffect:
       - m_Value: 0
         m_Name: Throttle
         m_Overridden: 1
+      - m_Value: 1.5
+        m_Name: FocusDistance
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -278,6 +283,107 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &87468203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87468196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139d54a04b8be455f876761e38676f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: FocusDistance
+  Target: {fileID: 649329956}
+  ReferenceAxis: 2
+  UseGlobal: 0
+--- !u!1 &214500076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 214500077}
+  - component: {fileID: 214500078}
+  m_Layer: 0
+  m_Name: Mount Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &214500077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214500076}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 649329956}
+  m_Father: {fileID: 527111554}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &214500078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214500076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c03db3bf2a2c451cbd80423ab4bddb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ForwardAction>k__BackingField:
+    m_Name: Forward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a90115a5-5a84-4d91-9773-9e36da8da6ac
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c01b6457-8c1c-4fc4-9a81-443d3682ad81
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward
+      m_Flags: 0
+    m_Flags: 0
+  <BackwardAction>k__BackingField:
+    m_Name: Backward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 89d3d54a-96e7-49a2-b036-c00226c96352
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 2961dac5-376b-490e-b032-d42f8ddfa727
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Backward
+      m_Flags: 0
+    m_Flags: 0
+  <Velocity>k__BackingField:
+    x: 0
+    y: 0
+    z: 1
+  <Acceleration>k__BackingField: 4
 --- !u!1 &356116625
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +560,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1107918121}
+  - {fileID: 214500077}
   m_Father: {fileID: 969721247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &527111555
@@ -480,6 +586,89 @@ MonoBehaviour:
   frequency: 0.1
   octaves: 1
   seed: 0
+--- !u!1 &649329955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649329956}
+  - component: {fileID: 649329957}
+  m_Layer: 0
+  m_Name: Focus Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &649329956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649329955}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 214500077}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649329957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649329955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c03db3bf2a2c451cbd80423ab4bddb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ForwardAction>k__BackingField:
+    m_Name: Forward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a90115a5-5a84-4d91-9773-9e36da8da6ac
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c01b6457-8c1c-4fc4-9a81-443d3682ad81
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward
+      m_Flags: 0
+    m_Flags: 0
+  <BackwardAction>k__BackingField:
+    m_Name: Backward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 89d3d54a-96e7-49a2-b036-c00226c96352
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 2961dac5-376b-490e-b032-d42f8ddfa727
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Backward
+      m_Flags: 0
+    m_Flags: 0
+  <Velocity>k__BackingField:
+    x: 0
+    y: 0
+    z: 1
+  <Acceleration>k__BackingField: 4
 --- !u!1 &657373276
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +683,7 @@ GameObject:
   - component: {fileID: 657373279}
   - component: {fileID: 657373278}
   - component: {fileID: 657373282}
+  - component: {fileID: 657373283}
   m_Layer: 0
   m_Name: Plexus
   m_TagString: Untagged
@@ -553,6 +743,7 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 657373278}
   - {fileID: 657373282}
+  - {fileID: 657373283}
   m_VisualEffect: {fileID: 657373281}
 --- !u!73398921 &657373280
 VFXRenderer:
@@ -618,11 +809,14 @@ VisualEffect:
       - m_Value: 0
         m_Name: Throttle
         m_Overridden: 1
+      - m_Value: 1.5
+        m_Name: FocusDistance
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 0, y: 0, z: 0.5}
+      - m_Value: {x: 0, y: 0, z: 1}
         m_Name: Origin
         m_Overridden: 1
     m_Vector4f:
@@ -657,6 +851,23 @@ MonoBehaviour:
   m_Property:
     m_Name: Origin
   Target: {fileID: 969721247}
+--- !u!114 &657373283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657373276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139d54a04b8be455f876761e38676f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: FocusDistance
+  Target: {fileID: 649329956}
+  ReferenceAxis: 2
+  UseGlobal: 0
 --- !u!1 &694569378
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +947,7 @@ GameObject:
   - component: {fileID: 699194022}
   - component: {fileID: 699194021}
   - component: {fileID: 699194020}
+  - component: {fileID: 699194024}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -794,6 +1006,7 @@ MonoBehaviour:
   m_ExecuteInEditor: 1
   m_Bindings:
   - {fileID: 699194020}
+  - {fileID: 699194024}
   m_VisualEffect: {fileID: 699194023}
 --- !u!73398921 &699194022
 VFXRenderer:
@@ -859,6 +1072,9 @@ VisualEffect:
       - m_Value: 0
         m_Name: Throttle
         m_Overridden: 1
+      - m_Value: 1.5
+        m_Name: FocusDistance
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -882,6 +1098,23 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &699194024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699194017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139d54a04b8be455f876761e38676f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: FocusDistance
+  Target: {fileID: 649329956}
+  ReferenceAxis: 2
+  UseGlobal: 0
 --- !u!1 &752545144
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +1128,7 @@ GameObject:
   - component: {fileID: 752545149}
   - component: {fileID: 752545148}
   - component: {fileID: 752545147}
+  - component: {fileID: 752545151}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -953,6 +1187,7 @@ MonoBehaviour:
   m_ExecuteInEditor: 1
   m_Bindings:
   - {fileID: 752545147}
+  - {fileID: 752545151}
   m_VisualEffect: {fileID: 752545150}
 --- !u!73398921 &752545149
 VFXRenderer:
@@ -1021,6 +1256,9 @@ VisualEffect:
       - m_Value: 1
         m_Name: Throttle
         m_Overridden: 1
+      - m_Value: 1.5
+        m_Name: FocusDistance
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -1044,6 +1282,23 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &752545151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752545144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139d54a04b8be455f876761e38676f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: FocusDistance
+  Target: {fileID: 649329956}
+  ReferenceAxis: 2
+  UseGlobal: 0
 --- !u!1 &969721246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 969721247}
+  - component: {fileID: 969721248}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -1069,13 +1325,64 @@ Transform:
   m_GameObject: {fileID: 969721246}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 527111554}
   m_Father: {fileID: 1873703073}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &969721248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969721246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c03db3bf2a2c451cbd80423ab4bddb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ForwardAction>k__BackingField:
+    m_Name: Forward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 60d27808-a822-49fa-a6e6-e2a76546e5d3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 63ccc789-4f33-4b4c-b451-a55edf1e27d9
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward
+      m_Flags: 0
+    m_Flags: 0
+  <BackwardAction>k__BackingField:
+    m_Name: Backward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 8832b8ee-ddca-4913-b3d3-76c66563f33c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 78e2ed50-85cc-4d87-adc0-2241588f071a
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Backward
+      m_Flags: 0
+    m_Flags: 0
+  <Velocity>k__BackingField:
+    x: 0
+    y: 0
+    z: 1
+  <Acceleration>k__BackingField: 4
 --- !u!1 &1107918120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1395,7 @@ GameObject:
   - component: {fileID: 1107918123}
   - component: {fileID: 1107918122}
   - component: {fileID: 1107918124}
+  - component: {fileID: 1107918125}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1103,12 +1411,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107918120}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 527111554}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1107918122
 MonoBehaviour:
@@ -1234,6 +1542,22 @@ MonoBehaviour:
       z: 0.8
       w: 0.34
   _shader: {fileID: -6465566751694194690, guid: 9f8708b7ddc3f4fa1932f7242f05db2c, type: 3}
+--- !u!114 &1107918125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107918120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da182326928a834829223cac101f282b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 214500077}
+  interpolator: 2
+  positionSpeed: 4
+  rotationSpeed: 4
 --- !u!1 &1110452266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1569,8 @@ GameObject:
   - component: {fileID: 1110452267}
   - component: {fileID: 1110452269}
   - component: {fileID: 1110452268}
+  - component: {fileID: 1110452271}
+  - component: {fileID: 1110452270}
   m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
@@ -1327,7 +1653,10 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 1.5
+        m_Name: FocusDistance
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -1348,6 +1677,39 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &1110452270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110452266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139d54a04b8be455f876761e38676f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: FocusDistance
+  Target: {fileID: 649329956}
+  ReferenceAxis: 2
+  UseGlobal: 0
+--- !u!114 &1110452271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110452266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExecuteInEditor: 1
+  m_Bindings:
+  - {fileID: 1110452270}
+  m_VisualEffect: {fileID: 1110452269}
 --- !u!1 &1112802880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,6 +1769,7 @@ GameObject:
   - component: {fileID: 1236087253}
   - component: {fileID: 1236087252}
   - component: {fileID: 1236087251}
+  - component: {fileID: 1236087255}
   m_Layer: 0
   m_Name: Sparkles
   m_TagString: Untagged
@@ -1465,6 +1828,7 @@ MonoBehaviour:
   m_ExecuteInEditor: 1
   m_Bindings:
   - {fileID: 1236087251}
+  - {fileID: 1236087255}
   m_VisualEffect: {fileID: 1236087254}
 --- !u!73398921 &1236087253
 VFXRenderer:
@@ -1530,6 +1894,9 @@ VisualEffect:
       - m_Value: 0
         m_Name: Throttle
         m_Overridden: 1
+      - m_Value: 1.5
+        m_Name: FocusDistance
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -1550,6 +1917,23 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &1236087255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236087249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139d54a04b8be455f876761e38676f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: FocusDistance
+  Target: {fileID: 649329956}
+  ReferenceAxis: 2
+  UseGlobal: 0
 --- !u!1 &1330519130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,7 +2177,7 @@ GameObject:
   - component: {fileID: 1873703073}
   - component: {fileID: 1873703074}
   m_Layer: 0
-  m_Name: Camera Follower
+  m_Name: Camera Motion Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1807,7 +2191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873703071}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1815,20 +2199,33 @@ Transform:
   - {fileID: 969721247}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1873703074
-MonoBehaviour:
+--- !u!1773428102 &1873703074
+ParentConstraint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873703071}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7b19924900cd4405b11930bc4477ec4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Target>k__BackingField: {fileID: 1874686797}
-  <Speed>k__BackingField: 4
+  serializedVersion: 2
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffsets:
+  - {x: 0, y: 0, z: 0}
+  m_RotationOffsets:
+  - {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 0
+  m_Active: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 1874686797}
+    weight: 1
 --- !u!1 &1874686795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +2237,7 @@ GameObject:
   - component: {fileID: 1874686797}
   - component: {fileID: 1874686796}
   m_Layer: 0
-  m_Name: Camera Tracker
+  m_Name: Camera Tracking Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1887,6 +2284,7 @@ GameObject:
   - component: {fileID: 2092364934}
   - component: {fileID: 2092364933}
   - component: {fileID: 2092364932}
+  - component: {fileID: 2092364936}
   m_Layer: 0
   m_Name: Scanlines
   m_TagString: Untagged
@@ -1945,6 +2343,7 @@ MonoBehaviour:
   m_ExecuteInEditor: 1
   m_Bindings:
   - {fileID: 2092364932}
+  - {fileID: 2092364936}
   m_VisualEffect: {fileID: 2092364935}
 --- !u!73398921 &2092364934
 VFXRenderer:
@@ -2010,6 +2409,9 @@ VisualEffect:
       - m_Value: 0
         m_Name: Throttle
         m_Overridden: 1
+      - m_Value: 1.5
+        m_Name: FocusDistance
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -2030,6 +2432,23 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &2092364936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092364930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139d54a04b8be455f876761e38676f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: FocusDistance
+  Target: {fileID: 649329956}
+  ReferenceAxis: 2
+  UseGlobal: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2039,4 +2458,5 @@ SceneRoots:
   - {fileID: 356116626}
   - {fileID: 1874686797}
   - {fileID: 1873703073}
+  - {fileID: 1107918121}
   - {fileID: 1330519131}
