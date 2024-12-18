@@ -1,0 +1,14 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MonitorStyles.uss?fileID=7433441132597879392&amp;guid=3104e62c1a9ee4d1c9b321623348b6cb&amp;type=3#MonitorStyles" />
+    <engine:VisualElement name="root" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Misc/Render.renderTexture?fileID=8400000&amp;guid=46f39e2deb27a410c833a96323c7a848&amp;type=2#Render&quot;); -unity-background-scale-mode: scale-to-fit;">
+        <engine:DropdownField label="NDI Source" name="selector" data-source-type="Rcam3.SourceSelector, Assembly-CSharp" style="position: absolute; top: 20px; left: 20px; right: 20px;">
+            <Bindings>
+                <engine:DataBinding property="choices" data-source-path="SourceList" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:DropdownField>
+        <engine:VisualElement name="monitor" style="position: absolute; right: 20px; bottom: 20px; flex-direction: row;">
+            <engine:VisualElement name="monitor-color" style="height: 144px; width: 192px;" />
+            <engine:VisualElement name="monitor-depth" style="width: 192px; height: 144px;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

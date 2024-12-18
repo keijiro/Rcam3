@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 19101, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: PanelSettings
+  m_Name: ProjectorPanel
   m_EditorClassIdentifier: 
   themeUss: {fileID: -4733365628477956816, guid: 4e4071c3ea76b49579ee36aec5c5e154, type: 3}
   m_DisableNoThemeWarning: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   m_ScreenMatchMode: 0
   m_Match: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_BindingLogLevel: 0
   m_ClearDepthStencil: 1
   m_ClearColor: 0
