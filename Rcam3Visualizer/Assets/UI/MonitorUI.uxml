@@ -1,13 +1,13 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/MonitorStyles.uss?fileID=7433441132597879392&amp;guid=3104e62c1a9ee4d1c9b321623348b6cb&amp;type=3#MonitorStyles" />
     <engine:VisualElement name="flex-root" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Misc/Render.renderTexture?fileID=8400000&amp;guid=46f39e2deb27a410c833a96323c7a848&amp;type=2#Render&quot;); -unity-background-scale-mode: scale-to-fit; justify-content: center;">
-        <engine:VisualElement name="controller-container" style="width: 800px; margin-left: 100px;">
+        <engine:VisualElement name="controller-container" style="width: 750px; margin-left: 100px;">
             <engine:DropdownField label="NDI Source" name="selector" data-source-type="Rcam3.SourceSelector, Assembly-CSharp">
                 <Bindings>
                     <engine:DataBinding property="choices" data-source-path="SourceList" binding-mode="ToTarget" />
                 </Bindings>
             </engine:DropdownField>
-            <engine:VisualElement name="rows-container" style="width: 680px;">
+            <engine:VisualElement name="rows-container">
                 <engine:VisualElement name="spacer" style="height: 80px;" />
                 <engine:Label text="Body VFX" />
                 <engine:VisualElement name="row1" style="flex-direction: row;">
@@ -31,10 +31,18 @@
                 <engine:VisualElement name="spacer" style="height: 40px;" />
                 <engine:Label text="Background Palette" />
                 <engine:VisualElement name="row3" style="flex-direction: row;">
-                    <VJUITK.VJButton name="button-palette1" label="Rose" />
+                    <VJUITK.VJButton name="button-palette1" label="Clean" />
                     <VJUITK.VJButton name="button-palette2" label="Sky" />
-                    <VJUITK.VJButton name="button-palette3" label="Pink" />
-                    <VJUITK.VJButton name="button-palette4" label="Pop" />
+                    <VJUITK.VJButton name="button-palette3" label="Pop" />
+                    <VJUITK.VJButton name="button-palette4" label="Red" />
+                    <VJUITK.VJButton name="button-palette5" label="Green" />
+                    <VJUITK.VJButton name="button-palette6" label="Green" />
+                    <VJUITK.VJButton name="button-palette7" label="Green" />
+                    <VJUITK.VJButton name="button-palette8" label="Green" />
+                </engine:VisualElement>
+                <engine:VisualElement name="spacer" style="height: 40px;" />
+                <engine:VisualElement name="row4" style="flex-direction: row-reverse;">
+                    <VJUITK.VJKnob label="Fadeout" name="knob-fadeout" high-value="1" />
                 </engine:VisualElement>
             </engine:VisualElement>
         </engine:VisualElement>

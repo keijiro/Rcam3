@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 87468199}
   - component: {fileID: 87468203}
   - component: {fileID: 87468204}
+  - component: {fileID: 87468205}
   m_Layer: 0
   m_Name: Sweeper
   m_TagString: Untagged
@@ -194,6 +195,7 @@ MonoBehaviour:
   - {fileID: 87468199}
   - {fileID: 87468203}
   - {fileID: 87468204}
+  - {fileID: 87468205}
   m_VisualEffect: {fileID: 87468202}
 --- !u!73398921 &87468201
 VFXRenderer:
@@ -262,6 +264,9 @@ VisualEffect:
       - m_Value: 1.5
         m_Name: FocusDistance
         m_Overridden: 1
+      - m_Value: 0
+        m_Name: HueShift
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -319,6 +324,23 @@ MonoBehaviour:
   Target:
     Component: {fileID: 1693156838}
     ElementName: knob-sweeper
+--- !u!114 &87468205
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87468196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: HueShift
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-hue
 --- !u!1 &214500076
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +726,7 @@ GameObject:
   - component: {fileID: 657373282}
   - component: {fileID: 657373283}
   - component: {fileID: 657373284}
+  - component: {fileID: 657373285}
   m_Layer: 0
   m_Name: Plexus
   m_TagString: Untagged
@@ -765,6 +788,7 @@ MonoBehaviour:
   - {fileID: 657373282}
   - {fileID: 657373283}
   - {fileID: 657373284}
+  - {fileID: 657373285}
   m_VisualEffect: {fileID: 657373281}
 --- !u!73398921 &657373280
 VFXRenderer:
@@ -832,6 +856,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 1.5
         m_Name: FocusDistance
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: HueShift
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -906,6 +933,23 @@ MonoBehaviour:
   Target:
     Component: {fileID: 1693156838}
     ElementName: knob-plexus
+--- !u!114 &657373285
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657373276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: HueShift
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-hue
 --- !u!1 &694569378
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +1031,7 @@ GameObject:
   - component: {fileID: 699194020}
   - component: {fileID: 699194024}
   - component: {fileID: 699194025}
+  - component: {fileID: 699194026}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -1047,6 +1092,7 @@ MonoBehaviour:
   - {fileID: 699194020}
   - {fileID: 699194024}
   - {fileID: 699194025}
+  - {fileID: 699194026}
   m_VisualEffect: {fileID: 699194023}
 --- !u!73398921 &699194022
 VFXRenderer:
@@ -1115,6 +1161,9 @@ VisualEffect:
       - m_Value: 1.5
         m_Name: FocusDistance
         m_Overridden: 1
+      - m_Value: 0
+        m_Name: HueShift
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -1172,6 +1221,23 @@ MonoBehaviour:
   Target:
     Component: {fileID: 1693156838}
     ElementName: knob-flame
+--- !u!114 &699194026
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699194017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: HueShift
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-hue
 --- !u!1 &752545144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1253,7 @@ GameObject:
   - component: {fileID: 752545147}
   - component: {fileID: 752545151}
   - component: {fileID: 752545152}
+  - component: {fileID: 752545153}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -1247,6 +1314,7 @@ MonoBehaviour:
   - {fileID: 752545147}
   - {fileID: 752545151}
   - {fileID: 752545152}
+  - {fileID: 752545153}
   m_VisualEffect: {fileID: 752545150}
 --- !u!73398921 &752545149
 VFXRenderer:
@@ -1318,6 +1386,9 @@ VisualEffect:
       - m_Value: 1.5
         m_Name: FocusDistance
         m_Overridden: 1
+      - m_Value: 0
+        m_Name: HueShift
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -1375,6 +1446,23 @@ MonoBehaviour:
   Target:
     Component: {fileID: 1693156838}
     ElementName: knob-points
+--- !u!114 &752545153
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752545144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: HueShift
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-hue
 --- !u!1 &929429963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,7 +1703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107918120}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1731,20 +1819,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gradient:
     R:
-      x: 0.14
-      y: 0.19
-      z: 1
-      w: 0.72
+      x: 0.39967757
+      y: 0.9688896
+      z: 0.51228887
+      w: 0.011885406
     G:
-      x: 0.17
-      y: 0.11
-      z: 1
-      w: 0.26
+      x: 0.38562733
+      y: 0.17624618
+      z: 1.711241
+      w: 0.9148377
     B:
-      x: 0.11
-      y: 0.25
-      z: 0.8
-      w: 0.34
+      x: 0.68266207
+      y: 0.08971799
+      z: 0.9361564
+      w: 0.07755328
   _shader: {fileID: -6465566751694194690, guid: 9f8708b7ddc3f4fa1932f7242f05db2c, type: 3}
 --- !u!114 &1107918125
 MonoBehaviour:
@@ -1776,6 +1864,7 @@ GameObject:
   - component: {fileID: 1110452271}
   - component: {fileID: 1110452270}
   - component: {fileID: 1110452272}
+  - component: {fileID: 1110452273}
   m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
@@ -1924,6 +2013,7 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 1110452270}
   - {fileID: 1110452272}
+  - {fileID: 1110452273}
   m_VisualEffect: {fileID: 1110452269}
 --- !u!114 &1110452272
 MonoBehaviour:
@@ -1942,6 +2032,23 @@ MonoBehaviour:
   Target:
     Component: {fileID: 1693156838}
     ElementName: knob-env-particles
+--- !u!114 &1110452273
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110452266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: HueShift
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-env-hue
 --- !u!1 &1112802880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,6 +2110,7 @@ GameObject:
   - component: {fileID: 1236087251}
   - component: {fileID: 1236087255}
   - component: {fileID: 1236087256}
+  - component: {fileID: 1236087257}
   m_Layer: 0
   m_Name: Sparkles
   m_TagString: Untagged
@@ -2063,6 +2171,7 @@ MonoBehaviour:
   - {fileID: 1236087251}
   - {fileID: 1236087255}
   - {fileID: 1236087256}
+  - {fileID: 1236087257}
   m_VisualEffect: {fileID: 1236087254}
 --- !u!73398921 &1236087253
 VFXRenderer:
@@ -2131,6 +2240,9 @@ VisualEffect:
       - m_Value: 1.5
         m_Name: FocusDistance
         m_Overridden: 1
+      - m_Value: 0
+        m_Name: HueShift
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -2185,6 +2297,23 @@ MonoBehaviour:
   Target:
     Component: {fileID: 1693156838}
     ElementName: knob-sparkles
+--- !u!114 &1236087257
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236087249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: HueShift
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-hue
 --- !u!1 &1330519130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2509,6 +2638,7 @@ GameObject:
   - component: {fileID: 1681591669}
   - component: {fileID: 1681591668}
   - component: {fileID: 1681591672}
+  - component: {fileID: 1681591673}
   m_Layer: 0
   m_Name: Sweeper
   m_TagString: Untagged
@@ -2564,6 +2694,7 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 1681591668}
   - {fileID: 1681591672}
+  - {fileID: 1681591673}
   m_VisualEffect: {fileID: 1681591671}
 --- !u!73398921 &1681591670
 VFXRenderer:
@@ -2678,6 +2809,23 @@ MonoBehaviour:
   Target:
     Component: {fileID: 1693156838}
     ElementName: knob-env-sweeper
+--- !u!114 &1681591673
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681591666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: HueShift
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-env-hue
 --- !u!1 &1693156837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,65 +2923,80 @@ MonoBehaviour:
   _skybox: {fileID: 1107918124}
   _presets:
   - R:
-      x: 0.4356013
-      y: 0.7956779
-      z: 1.6668515
-      w: 0.94557965
+      x: 0.19
+      y: 0.37
+      z: 0.5
+      w: 0.5
     G:
-      x: 0.26358297
-      y: 0.022936704
-      z: 1.0437402
-      w: 0.69879574
+      x: 0.32
+      y: 0.26
+      z: 0.5
+      w: 0.5
     B:
-      x: 0.12634124
-      y: 0.9072249
-      z: 0.24914744
-      w: 0.76773846
+      x: 0.45
+      y: 0.29
+      z: 0.5
+      w: 0.5
   - R:
-      x: 0.5207744
-      y: 0.23170498
-      z: 1.3371571
-      w: 0.01619959
+      x: 0.1
+      y: -0.04
+      z: 1.64
+      w: 0.68775254
     G:
-      x: 0.89657223
-      y: 0.8760668
-      z: 1.8696926
-      w: 0.106338754
+      x: 0.51
+      y: 0.4
+      z: 1.64
+      w: 0.6751196
     B:
-      x: 0.9313204
-      y: 0.52969855
-      z: 1.4695097
-      w: 0.3313779
+      x: 0.65
+      y: 0.29
+      z: 1.64
+      w: 0.6850311
   - R:
-      x: 0.29725626
-      y: 0.37235716
-      z: 1.9535136
-      w: 0.6423711
+      x: 0.41
+      y: 0.45
+      z: 0.53
+      w: 0.8534119
     G:
-      x: 0.8914089
-      y: 0.2300413
-      z: 0.5588756
-      w: 0.75991404
+      x: 0.4912513
+      y: 0.28
+      z: 1.5480099
+      w: 0.84
     B:
-      x: 0.7777041
-      y: 0.46920365
-      z: 1.7911799
-      w: 0.3888901
+      x: 0.59518594
+      y: 0.32
+      z: 0.54093534
+      w: 0.16068245
   - R:
-      x: 0.27415338
-      y: 0.93532884
-      z: 0.79669726
-      w: 0.0553819
+      x: 0.75
+      y: 0.36
+      z: 1.18
+      w: 0.52
     G:
-      x: 0.21590176
-      y: 0.1711495
-      z: 1.8825502
-      w: 0.85028887
+      x: 0.18561913
+      y: 0.055289038
+      z: 1.691288
+      w: 0.5373798
     B:
-      x: 0.2984809
-      y: 0.96699834
-      z: 0.1962829
-      w: 0.0042126183
+      x: 0.16348173
+      y: 0.2796649
+      z: 1.2037398
+      w: 0.8995056
+  - R:
+      x: 0.25
+      y: 0.09
+      z: 1.18
+      w: 0.83
+    G:
+      x: 0.5
+      y: 0.22
+      z: 0.5
+      w: 0.5
+    B:
+      x: 0.36
+      y: 0.11
+      z: 0.83
+      w: 0.5
 --- !u!1 &1873703071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,6 +3167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00162fc268d024b0a996565f7539ac3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _monitor: {fileID: 1693156838}
 --- !u!1 &2092364930
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,6 +3183,7 @@ GameObject:
   - component: {fileID: 2092364932}
   - component: {fileID: 2092364936}
   - component: {fileID: 2092364937}
+  - component: {fileID: 2092364938}
   m_Layer: 0
   m_Name: Scanlines
   m_TagString: Untagged
@@ -3079,6 +3244,7 @@ MonoBehaviour:
   - {fileID: 2092364932}
   - {fileID: 2092364936}
   - {fileID: 2092364937}
+  - {fileID: 2092364938}
   m_VisualEffect: {fileID: 2092364935}
 --- !u!73398921 &2092364934
 VFXRenderer:
@@ -3147,6 +3313,9 @@ VisualEffect:
       - m_Value: 1.5
         m_Name: FocusDistance
         m_Overridden: 1
+      - m_Value: 0
+        m_Name: HueShift
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -3201,6 +3370,23 @@ MonoBehaviour:
   Target:
     Component: {fileID: 1693156838}
     ElementName: knob-scanlines
+--- !u!114 &2092364938
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092364930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: HueShift
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-hue
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
