@@ -217,12 +217,21 @@
       "url": "https://registry.npmjs.com"
     },
     "jp.keijiro.vfxgraphassets": {
-      "version": "3.6.0",
+      "version": "3.7.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.visualeffectgraph": "17.0.0",
         "jp.keijiro.shadergraphassets": "2.5.2"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.vjuitk": {
+      "version": "1.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://registry.npmjs.com"
     },

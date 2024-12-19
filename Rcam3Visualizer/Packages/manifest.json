@@ -8,7 +8,8 @@
     "jp.keijiro.klak.ndi": "2.1.3",
     "jp.keijiro.metawire": "2.1.1",
     "jp.keijiro.rcam3.common": "file:../../Rcam3Common",
-    "jp.keijiro.vfxgraphassets": "3.6.0",
+    "jp.keijiro.vfxgraphassets": "3.7.0",
+    "jp.keijiro.vjuitk": "1.1.0",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.uielements": "1.0.0"
   },

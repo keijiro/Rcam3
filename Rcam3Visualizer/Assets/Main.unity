@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 87468200}
   - component: {fileID: 87468199}
   - component: {fileID: 87468203}
+  - component: {fileID: 87468204}
   m_Layer: 0
   m_Name: Sweeper
   m_TagString: Untagged
@@ -192,6 +193,7 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 87468199}
   - {fileID: 87468203}
+  - {fileID: 87468204}
   m_VisualEffect: {fileID: 87468202}
 --- !u!73398921 &87468201
 VFXRenderer:
@@ -300,6 +302,23 @@ MonoBehaviour:
   Target: {fileID: 649329956}
   ReferenceAxis: 2
   UseGlobal: 0
+--- !u!114 &87468204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87468196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: Throttle
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-sweeper
 --- !u!1 &214500076
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +703,7 @@ GameObject:
   - component: {fileID: 657373278}
   - component: {fileID: 657373282}
   - component: {fileID: 657373283}
+  - component: {fileID: 657373284}
   m_Layer: 0
   m_Name: Plexus
   m_TagString: Untagged
@@ -744,6 +764,7 @@ MonoBehaviour:
   - {fileID: 657373278}
   - {fileID: 657373282}
   - {fileID: 657373283}
+  - {fileID: 657373284}
   m_VisualEffect: {fileID: 657373281}
 --- !u!73398921 &657373280
 VFXRenderer:
@@ -868,6 +889,23 @@ MonoBehaviour:
   Target: {fileID: 649329956}
   ReferenceAxis: 2
   UseGlobal: 0
+--- !u!114 &657373284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657373276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: Throttle
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-plexus
 --- !u!1 &694569378
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,6 +986,7 @@ GameObject:
   - component: {fileID: 699194021}
   - component: {fileID: 699194020}
   - component: {fileID: 699194024}
+  - component: {fileID: 699194025}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -1007,6 +1046,7 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 699194020}
   - {fileID: 699194024}
+  - {fileID: 699194025}
   m_VisualEffect: {fileID: 699194023}
 --- !u!73398921 &699194022
 VFXRenderer:
@@ -1115,6 +1155,23 @@ MonoBehaviour:
   Target: {fileID: 649329956}
   ReferenceAxis: 2
   UseGlobal: 0
+--- !u!114 &699194025
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699194017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: Throttle
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-flame
 --- !u!1 &752545144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1186,7 @@ GameObject:
   - component: {fileID: 752545148}
   - component: {fileID: 752545147}
   - component: {fileID: 752545151}
+  - component: {fileID: 752545152}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -1188,6 +1246,7 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 752545147}
   - {fileID: 752545151}
+  - {fileID: 752545152}
   m_VisualEffect: {fileID: 752545150}
 --- !u!73398921 &752545149
 VFXRenderer:
@@ -1253,7 +1312,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: Ripple
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0
         m_Name: Throttle
         m_Overridden: 1
       - m_Value: 1.5
@@ -1299,6 +1358,23 @@ MonoBehaviour:
   Target: {fileID: 649329956}
   ReferenceAxis: 2
   UseGlobal: 0
+--- !u!114 &752545152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752545144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: Throttle
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-points
 --- !u!1 &929429963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,6 +1983,7 @@ GameObject:
   - component: {fileID: 1236087252}
   - component: {fileID: 1236087251}
   - component: {fileID: 1236087255}
+  - component: {fileID: 1236087256}
   m_Layer: 0
   m_Name: Sparkles
   m_TagString: Untagged
@@ -1966,6 +2043,7 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 1236087251}
   - {fileID: 1236087255}
+  - {fileID: 1236087256}
   m_VisualEffect: {fileID: 1236087254}
 --- !u!73398921 &1236087253
 VFXRenderer:
@@ -2071,6 +2149,23 @@ MonoBehaviour:
   Target: {fileID: 649329956}
   ReferenceAxis: 2
   UseGlobal: 0
+--- !u!114 &1236087256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236087249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: Throttle
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-sparkles
 --- !u!1 &1330519130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,6 +2904,7 @@ GameObject:
   - component: {fileID: 2092364933}
   - component: {fileID: 2092364932}
   - component: {fileID: 2092364936}
+  - component: {fileID: 2092364937}
   m_Layer: 0
   m_Name: Scanlines
   m_TagString: Untagged
@@ -2868,6 +2964,7 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 2092364932}
   - {fileID: 2092364936}
+  - {fileID: 2092364937}
   m_VisualEffect: {fileID: 2092364935}
 --- !u!73398921 &2092364934
 VFXRenderer:
@@ -2973,6 +3070,23 @@ MonoBehaviour:
   Target: {fileID: 649329956}
   ReferenceAxis: 2
   UseGlobal: 0
+--- !u!114 &2092364937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092364930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: Throttle
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-scanlines
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
