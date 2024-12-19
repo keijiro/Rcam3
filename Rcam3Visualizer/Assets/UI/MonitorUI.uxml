@@ -31,10 +31,10 @@
                 <engine:VisualElement name="spacer" style="height: 40px;" />
                 <engine:Label text="Background Palette" />
                 <engine:VisualElement name="row3" style="flex-direction: row;">
-                    <VJUITK.VJButton name="button-grad1" label="Rose" />
-                    <VJUITK.VJButton name="button-grad2" label="Sky" />
-                    <VJUITK.VJButton name="button-grad3" label="Pink" />
-                    <VJUITK.VJButton name="button-grad4" label="Pop" />
+                    <VJUITK.VJButton name="button-palette1" label="Rose" />
+                    <VJUITK.VJButton name="button-palette2" label="Sky" />
+                    <VJUITK.VJButton name="button-palette3" label="Pink" />
+                    <VJUITK.VJButton name="button-palette4" label="Pop" />
                 </engine:VisualElement>
             </engine:VisualElement>
         </engine:VisualElement>
