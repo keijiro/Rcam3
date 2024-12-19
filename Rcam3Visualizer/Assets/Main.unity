@@ -304,7 +304,7 @@ MonoBehaviour:
   UseGlobal: 0
 --- !u!114 &87468204
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -891,7 +891,7 @@ MonoBehaviour:
   UseGlobal: 0
 --- !u!114 &657373284
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1360,7 +1360,7 @@ MonoBehaviour:
   UseGlobal: 0
 --- !u!114 &752545152
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1775,6 +1775,7 @@ GameObject:
   - component: {fileID: 1110452268}
   - component: {fileID: 1110452271}
   - component: {fileID: 1110452270}
+  - component: {fileID: 1110452272}
   m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
@@ -1922,7 +1923,25 @@ MonoBehaviour:
   m_ExecuteInEditor: 1
   m_Bindings:
   - {fileID: 1110452270}
+  - {fileID: 1110452272}
   m_VisualEffect: {fileID: 1110452269}
+--- !u!114 &1110452272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110452266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: Throttle
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-env-particles
 --- !u!1 &1112802880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,7 +2170,7 @@ MonoBehaviour:
   UseGlobal: 0
 --- !u!114 &1236087256
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2489,6 +2508,7 @@ GameObject:
   - component: {fileID: 1681591670}
   - component: {fileID: 1681591669}
   - component: {fileID: 1681591668}
+  - component: {fileID: 1681591672}
   m_Layer: 0
   m_Name: Sweeper
   m_TagString: Untagged
@@ -2543,6 +2563,7 @@ MonoBehaviour:
   m_ExecuteInEditor: 1
   m_Bindings:
   - {fileID: 1681591668}
+  - {fileID: 1681591672}
   m_VisualEffect: {fileID: 1681591671}
 --- !u!73398921 &1681591670
 VFXRenderer:
@@ -2611,7 +2632,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: HueShift
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0
         m_Name: Throttle
         m_Overridden: 1
     m_Vector2f:
@@ -2640,6 +2661,23 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &1681591672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681591666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50523eaa9417b4a6dbaadc4012e90a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Property:
+    m_Name: Throttle
+  Target:
+    Component: {fileID: 1693156838}
+    ElementName: knob-env-sweeper
 --- !u!1 &1693156837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,7 +3110,7 @@ MonoBehaviour:
   UseGlobal: 0
 --- !u!114 &2092364937
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
