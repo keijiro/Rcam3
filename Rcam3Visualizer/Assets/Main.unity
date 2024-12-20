@@ -2894,6 +2894,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _decoder: {fileID: 694569381}
+  _xformPivot: {fileID: 969721247}
+  _xformMount: {fileID: 214500077}
+  _xformFocus: {fileID: 649329956}
 --- !u!114 &1693156841
 MonoBehaviour:
   m_ObjectHideFlags: 0
