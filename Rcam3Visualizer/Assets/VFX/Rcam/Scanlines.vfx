@@ -360,8 +360,8 @@ MonoBehaviour:
   - title: Final Color with Throttling
     position:
       serializedVersion: 2
-      x: -25
-      y: 1979
+      x: -20
+      y: 2050
       width: 622
       height: 290
     contents:
@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -1898,7 +1898,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 96
+      m_SerializableObject: 192
     m_Space: -1
   m_Property:
     name: o
@@ -2444,8 +2444,8 @@ MonoBehaviour:
   - {fileID: 114350483966675046}
   - {fileID: 114350483966675448}
   dataType: 1
-  capacity: 49152
-  stripCapacity: 96
+  capacity: 98304
+  stripCapacity: 192
   particlePerStripCount: 512
   needsComputeBounds: 0
   boundsMode: 1
@@ -4212,7 +4212,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 4
+      m_SerializableObject: 10
     m_Space: -1
   m_Property:
     name: Frequency
@@ -4283,7 +4283,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.5,"y":0.5,"z":0.0}'
+      m_SerializableObject: '{"x":0.0,"y":0.15000000596046449,"z":0.11999999731779099}'
     m_Space: -1
   m_Property:
     name: Scroll
@@ -5278,7 +5278,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 2, y: 2112}
+  m_UIPosition: {x: 8, y: 2182}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots: []
@@ -5439,7 +5439,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 0, y: 2142}
+  m_UIPosition: {x: 6, y: 2212}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots: []
@@ -5696,7 +5696,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.3
+      m_SerializableObject: 0.2
     m_Space: -1
   m_Property:
     name: Radius
@@ -5852,7 +5852,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 114350483966675531}
       inputSlot: {fileID: 114350483966675573}
-    position: {x: 25, y: 2171.5}
+    position: {x: 30.5, y: 2241.5}
     expandedSlots: []
     expanded: 1
     supecollapsed: 1
@@ -5906,7 +5906,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 22, y: 2214}
+  m_UIPosition: {x: 28, y: 2284}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots:
@@ -6073,7 +6073,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 178, y: 2038}
+  m_UIPosition: {x: 184, y: 2108}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -6512,7 +6512,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 114350483966675582}
       inputSlot: {fileID: 114350483966675527}
-    position: {x: 416.5, y: 2313.5}
+    position: {x: 387.5, y: 2411}
     expandedSlots: []
     expanded: 1
     supecollapsed: 1
@@ -6577,8 +6577,8 @@ MonoBehaviour:
   - {fileID: 114350483966675589}
   m_OperatorName: Custom HLSL
   m_HLSLCode: "void ScanRipple(uint index, float ripple, out float turbulence, out
-    float color)\n{\n  float x = frac(index * 0.003 - _Time.y * 0.4);\n  color =
-    x;\n  turbulence = smoothstep(0.5, 1, x) * ripple;\n}"
+    float color)\n{\n  float x = frac(index * 0.002 - _Time.y * 0.2);\n  color =
+    x;\n  turbulence = smoothstep(0.75, 1, x) * ripple;\n}"
   m_ShaderFile: {fileID: 0}
   m_AvailableFunctions:
     selection: ScanRipple
@@ -6643,7 +6643,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.002
+      m_SerializableObject: 0.003
     m_Space: -1
   m_Property:
     name: ripple
@@ -7051,7 +7051,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":4.1556315422058109,"g":5.572721004486084,"b":9.082409858703614,"a":1.0},"time":0.773525595664978},{"color":{"r":29.508846282958986,"g":3.244427442550659,"b":19.408172607421876,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":2.0778160095214845,"g":2.786360740661621,"b":4.541205406188965,"a":1.0},"time":0.773525595664978},{"color":{"r":29.508846282958986,"g":3.244427442550659,"b":19.408172607421876,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
     m_Space: -1
   m_Property:
     name: gradient
@@ -7882,7 +7882,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
