@@ -6,6 +6,6 @@ void GradientSky_float
 {
     float n1 = SimplexNoise(UVW * 0.5 + float3(0, _Time.y * -0.2, 0)) * 0.20;
     float n2 = SimplexNoise(UVW * 1.0 + float3(0, _Time.y *  0.1, 0)) * 0.14;
-    float x = UVW.y + n1 + n2 + 0.5 + Dither / 64 - _Time.x;
-    Output = SRGBToLinear(CosineGradient(Gradient, x)) * Amplitude;
+    float x = UVW.y + n1 + n2 + 0.5 + Dither / 64 + sin(_Time.x) * 2;
+    Output = SRGBToLinear(CosineGradient(Gradient, x) * Amplitude);
 }
