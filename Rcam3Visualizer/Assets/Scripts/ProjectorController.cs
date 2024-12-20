@@ -23,7 +23,7 @@ public sealed class ProjectorController : MonoBehaviour
     void Update()
     {
         _projector.style.unityBackgroundImageTintColor
-          = new StyleColor(Color.white * _knob.value);
+          = new StyleColor(Color.white * (1 - _knob.value));
     }
 }
 
