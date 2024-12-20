@@ -396,7 +396,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: c01b6457-8c1c-4fc4-9a81-443d3682ad81
-      m_Path: <Keyboard>/w
+      m_Path: <Keyboard>/e
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -413,7 +413,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 2961dac5-376b-490e-b032-d42f8ddfa727
-      m_Path: <Keyboard>/s
+      m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -423,7 +423,7 @@ MonoBehaviour:
   <Velocity>k__BackingField:
     x: 0
     y: 0
-    z: 1
+    z: -1
   <Acceleration>k__BackingField: 4
 --- !u!1 &356116625
 GameObject:
@@ -597,13 +597,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527111553}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 214500077}
-  m_Father: {fileID: 969721247}
+  m_Father: {fileID: 1321109000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &527111555
 MonoBehaviour:
@@ -682,7 +682,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: c01b6457-8c1c-4fc4-9a81-443d3682ad81
-      m_Path: <Keyboard>/e
+      m_Path: <Keyboard>/r
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -699,7 +699,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 2961dac5-376b-490e-b032-d42f8ddfa727
-      m_Path: <Keyboard>/d
+      m_Path: <Keyboard>/f
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -865,7 +865,7 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 0, y: 0.1, z: 0.75}
+      - m_Value: {x: 0, y: 0, z: 0.75}
         m_Name: Origin
         m_Overridden: 1
     m_Vector4f:
@@ -1637,11 +1637,11 @@ Transform:
   m_GameObject: {fileID: 969721246}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0.75}
+  m_LocalPosition: {x: 0, y: 0, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 527111554}
+  - {fileID: 1321109000}
   m_Father: {fileID: 1873703073}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &969721248
@@ -2354,6 +2354,90 @@ MonoBehaviour:
   Target:
     Component: {fileID: 1693156838}
     ElementName: knob-hue
+--- !u!1 &1321108999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1321109000}
+  - component: {fileID: 1321109001}
+  m_Layer: 0
+  m_Name: Offset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1321109000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321108999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 527111554}
+  m_Father: {fileID: 969721247}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1321109001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321108999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c03db3bf2a2c451cbd80423ab4bddb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ForwardAction>k__BackingField:
+    m_Name: Forward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a90115a5-5a84-4d91-9773-9e36da8da6ac
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c01b6457-8c1c-4fc4-9a81-443d3682ad81
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward
+      m_Flags: 0
+    m_Flags: 0
+  <BackwardAction>k__BackingField:
+    m_Name: Backward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 89d3d54a-96e7-49a2-b036-c00226c96352
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 2961dac5-376b-490e-b032-d42f8ddfa727
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Backward
+      m_Flags: 0
+    m_Flags: 0
+  <Velocity>k__BackingField:
+    x: 0
+    y: 0.25
+    z: 0
+  <Acceleration>k__BackingField: 4
 --- !u!1 &1330519130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3081,7 +3165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _decoder: {fileID: 694569381}
   _xformPivot: {fileID: 969721247}
-  _xformMount: {fileID: 214500077}
+  _xformOffset: {fileID: 1321109000}
+  _xformDistance: {fileID: 214500077}
   _xformFocus: {fileID: 649329956}
 --- !u!114 &1693156841
 MonoBehaviour:

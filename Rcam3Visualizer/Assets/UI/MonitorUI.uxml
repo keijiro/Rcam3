@@ -52,7 +52,7 @@
         </engine:VisualElement>
     </engine:VisualElement>
     <engine:VisualElement name="monitor" style="position: absolute; right: 20px; bottom: 20px; flex-direction: row;">
-        <engine:Label text="Pivot: 0.00&#10;Mount: 0.00&#10;Focus: 0.00" name="monitor-label" style="width: 100px;" />
+        <engine:Label text="Pivot:    0.00&#10;Offset:   0.00&#10;Distance: 0.00&#10;Focus:    0.00" name="monitor-label" style="width: 180px; -unity-font-definition: url(&quot;project://database/Assets/UI/Fonts/Inconsolata/Inconsolata_SemiCondensed-ExtraLight.ttf?fileID=12800000&amp;guid=51c7153c783dd499a88b3f3032fb4820&amp;type=3#Inconsolata_SemiCondensed-ExtraLight&quot;); font-size: 20px;" />
         <engine:VisualElement name="monitor-color" style="height: 144px; width: 192px;" />
         <engine:VisualElement name="monitor-depth" style="width: 192px; height: 144px;" />
     </engine:VisualElement>
