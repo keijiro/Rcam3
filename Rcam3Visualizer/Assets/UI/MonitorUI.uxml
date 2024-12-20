@@ -11,13 +11,13 @@
                 <engine:VisualElement name="spacer" style="height: 80px;" />
                 <engine:Label text="Body VFX" />
                 <engine:VisualElement name="row1" style="flex-direction: row;">
-                    <VJUITK.VJKnob label="Flame" name="knob-flame" high-value="1" />
-                    <VJUITK.VJKnob label="Plexus" name="knob-plexus" high-value="1" />
                     <VJUITK.VJKnob label="Points" name="knob-points" high-value="1" value="1" />
                     <VJUITK.VJKnob label="Ripple" name="knob-ripple" high-value="1" value="0" />
                     <VJUITK.VJKnob label="Scanlines" name="knob-scanlines" high-value="1" />
                     <VJUITK.VJKnob label="Sparkles" name="knob-sparkles" high-value="1" />
+                    <VJUITK.VJKnob label="Flame" name="knob-flame" high-value="1" />
                     <VJUITK.VJKnob label="Sweeper" name="knob-sweeper" high-value="1" />
+                    <VJUITK.VJKnob label="Plexus" name="knob-plexus" high-value="1" />
                     <engine:VisualElement name="spacer" style="flex-grow: 1;" />
                     <VJUITK.VJKnob label="Hue" name="knob-hue" high-value="1" />
                 </engine:VisualElement>
@@ -35,11 +35,10 @@
                     <VJUITK.VJButton name="button-palette1" label="Clean" />
                     <VJUITK.VJButton name="button-palette2" label="Sky" />
                     <VJUITK.VJButton name="button-palette3" label="Pop" />
-                    <VJUITK.VJButton name="button-palette4" label="Red" />
+                    <VJUITK.VJButton name="button-palette4" label="Rose" />
                     <VJUITK.VJButton name="button-palette5" label="Green" />
-                    <VJUITK.VJButton name="button-palette6" label="Green" />
-                    <VJUITK.VJButton name="button-palette7" label="Green" />
-                    <VJUITK.VJButton name="button-palette8" label="Green" />
+                    <VJUITK.VJButton name="button-palette6" label="Dusk" />
+                    <VJUITK.VJButton name="button-palette7" label="Lemon" />
                 </engine:VisualElement>
                 <engine:VisualElement name="spacer" style="height: 40px;" />
                 <engine:VisualElement name="row4" style="flex-direction: row-reverse;">
