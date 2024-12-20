@@ -32,7 +32,7 @@ public sealed class BackgroundSwitcher : MonoBehaviour
                                 B = math.lerp(g1.B, g2.B, t) };
 
     void OnButtonClicked(int index)
-      => _mix = (_mix.g1, _presets[index], 0);
+      => _mix = (_skybox.Gradient, _presets[index], 0);
 
     #endregion
 

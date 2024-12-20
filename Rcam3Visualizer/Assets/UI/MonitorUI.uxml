@@ -14,7 +14,7 @@
                     <VJUITK.VJKnob label="Flame" name="knob-flame" high-value="1" />
                     <VJUITK.VJKnob label="Plexus" name="knob-plexus" high-value="1" />
                     <VJUITK.VJKnob label="Points" name="knob-points" high-value="1" value="1" />
-                    <VJUITK.VJKnob label="Ripple" name="knob-ripple" high-value="1" value="1" />
+                    <VJUITK.VJKnob label="Ripple" name="knob-ripple" high-value="1" value="0" />
                     <VJUITK.VJKnob label="Scanlines" name="knob-scanlines" high-value="1" />
                     <VJUITK.VJKnob label="Sparkles" name="knob-sparkles" high-value="1" />
                     <VJUITK.VJKnob label="Sweeper" name="knob-sweeper" high-value="1" />
