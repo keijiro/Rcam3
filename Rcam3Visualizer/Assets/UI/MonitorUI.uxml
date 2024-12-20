@@ -27,6 +27,10 @@
                     <VJUITK.VJKnob label="Particles" name="knob-env-particles" high-value="1" />
                     <VJUITK.VJKnob label="Sweeper" name="knob-env-sweeper" high-value="1" />
                     <engine:VisualElement name="spacer" style="flex-grow: 1;" />
+                    <VJUITK.VJButton label="Reset" name="button-env-reset" />
+                    <VJUITK.VJButton label="Forward" name="button-env-forward" />
+                    <VJUITK.VJButton label="Down" name="button-env-down" />
+                    <engine:VisualElement name="spacer" style="flex-grow: 1;" />
                     <VJUITK.VJKnob label="Hue" name="knob-env-hue" high-value="1" />
                 </engine:VisualElement>
                 <engine:VisualElement name="spacer" style="height: 40px;" />

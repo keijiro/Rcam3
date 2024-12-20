@@ -1,4 +1,5 @@
 using Klak.Chromatics;
+using Klak.Math;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -54,7 +55,7 @@ public sealed class BackgroundSwitcher : MonoBehaviour
 
     void Update()
     {
-        _mix.t = math.saturate(_mix.t + 0.3f * Time.deltaTime);
+        _mix.t = ExpTween.Step(_mix.t, 1, 1.5f);
         _skybox.Gradient = Lerp(_mix.g0, _mix.g1, _mix.t);
     }
 
