@@ -5765,7 +5765,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.01
+      m_SerializableObject: 0.025
     m_Space: -1
   m_Property:
     name: Epsilon
@@ -7051,7 +7051,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":2.0778160095214845,"g":2.786360740661621,"b":4.541205406188965,"a":1.0},"time":0.773525595664978},{"color":{"r":29.508846282958986,"g":3.244427442550659,"b":19.408172607421876,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":2.0778160095214845,"g":2.786360740661621,"b":4.541205406188965,"a":1.0},"time":0.773525595664978},{"color":{"r":5.992156982421875,"g":0.6588233709335327,"b":3.9410831928253176,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
     m_Space: -1
   m_Property:
     name: gradient
