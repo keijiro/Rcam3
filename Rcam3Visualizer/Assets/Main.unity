@@ -2758,7 +2758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ui: {fileID: 1693156838}
   _elementName: button-env-down
-  <Position>k__BackingField: {x: 0, y: -1, z: 0}
+  <Position>k__BackingField: {x: 0, y: -0.5, z: 0}
 --- !u!114 &1540016686
 MonoBehaviour:
   m_ObjectHideFlags: 0
