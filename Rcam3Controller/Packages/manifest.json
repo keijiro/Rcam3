@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.unity.inputsystem": "1.11.2",
+    "com.unity.inputsystem": "1.12.0",
     "com.unity.modules.uielements": "1.0.0",
     "com.unity.render-pipelines.universal": "17.0.3",
     "com.unity.xr.arkit": "6.0.3",
